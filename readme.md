@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/zdimension/polytheque/raw/master/public/resources/assets/logo.svg"></p>
+<p align="center"><img src="https://github.com/zdimension/polytheque/blob/master/public/resources/assets/logo.svg"></p>
 
 ## Polythèque
 
