@@ -1,0 +1,195 @@
+<?xml version='1.0' standalone='yes'?>
+<annees>
+    <annee a="2019">
+        <niveau nom="PEIP2">
+            <semestre nom="S3">
+                <ue nom="UE301">
+                    <matiere nom="MATH301_MPC" ects="3">
+                        <note nom="CC" coeff="75%"/>
+                        <note nom="TP" coeff="25%"/>
+                    </matiere>
+                    <matiere nom="MATH302_PEIP" ects="3">
+                        <note nom="CC1" coeff="50%"/>
+                        <note nom="CC2" coeff="50%"/>
+                    </matiere>
+                    <matiere nom="CHIM301_CHIM" ects="3">
+                        <groupe coeff="75%">
+                            <note nom="CC1" coeff="50%"/>
+                            <note nom="CC2" coeff="50%"/>
+                        </groupe>
+                        <note nom="TP" coeff="25%"/>
+                    </matiere>
+
+                    <coloration nom="MECA" sites="acy,chy">
+                        <matiere nom="MECA302_PEIP" ects="3">
+                            <groupe coeff="2/3">
+                                <note nom="CC1" coeff="50%"/>
+                                <note nom="CC2" coeff="50%"/>
+                            </groupe>
+                            <note nom="TP" coeff="1/3"/>
+                        </matiere>
+                    </coloration>
+
+                    <coloration nom="INFO" sites="acy,chy">
+                        <matiere nom="INFO302_INFO" ects="3">
+                            <note nom="CC" coeff="75%"/>
+                            <note nom="TP" coeff="25%"/>
+                        </matiere>
+                    </coloration>
+
+                    <coloration nom="GDPR" sites="chy">
+                        <matiere nom="GDPR301_CHIM" ects="3">
+                            <note nom="CC1" coeff="50%"/>
+                            <note nom="CC2" coeff="50%"/>
+                        </matiere>
+                    </coloration>
+                </ue>
+
+                <ue nom="UE302">
+                    <matiere nom="PHYS301_PC" ects="3">
+                        <note nom="CC"/>
+                    </matiere>
+
+                    <matiere nom="PHYS302_PC" ects="3">
+                        <note nom="CC" coeff="80%"/>
+                        <note nom="WIMS" coeff="20%"/>
+                    </matiere>
+
+                    <matiere nom="MECA301_PEIP" ects="3">
+                        <note nom="CC1" coeff="50%"/>
+                        <note nom="CC2" coeff="50%"/>
+                    </matiere>
+
+                    <matiere nom="INFO301_INFO" ects="3">
+                        <note nom="CC" coeff="70%"/>
+                        <note nom="TP" coeff="30%"/>
+                    </matiere>
+                </ue>
+
+                <ue nom="UE303">
+                    <matiere nom="GIND301_PEIP" ects="3">
+                        <note nom="STAGE"/>
+                    </matiere>
+
+                    <matiere nom="ANGL301_SCEM" ects="3">
+                        <note nom="CONTINU"/>
+                    </matiere>
+                </ue>
+            </semestre>
+
+            <semestre>
+                <ue nom="UE400">
+                    <coloration nom="Sciences et technologies" sites="acy,chy">
+                        <ue nom="UE402">
+                            <matiere nom="MATH401_MIST" ects="3">
+                                <note nom="CC" coeff="75%"/>
+                                <note nom="TP" coeff="25%"/>
+                            </matiere>
+
+                            <matiere nom="MATH401_ETRS" ects="3">
+                                <note nom="CC" coeff="75%"/>
+                                <note nom="TP" coeff="25%"/>
+                            </matiere>
+                        </ue>
+
+                        <ue nom="UE403">
+                            <matiere nom="INFO404_INFO" ects="3">
+                                <note nom="CC" coeff="70%"/>
+                                <note nom="TP" coeff="30%"/>
+                            </matiere>
+
+                            <matiere nom="INFO401_INFO" ects="3" sites="chy">
+                                <note nom="CC" coeff="70%"/>
+                                <note nom="TP" coeff="30%"/>
+                            </matiere>
+
+                            <matiere nom="INFO403_MIASE" ects="3" sites="acy">
+                                <note nom="CC" coeff="70%"/>
+                                <note nom="TP" coeff="30%"/>
+                            </matiere>
+                        </ue>
+
+                        <ue nom="UE404">
+                            <matiere nom="ETRS402_ETRS" ects="3" sites="chy">
+                                <note nom="CC" coeff="75%"/>
+                                <note nom="TP" coeff="25%"/>
+                            </matiere>
+
+                            <matiere nom="ETRS402_PEIP" ects="3" sites="acy">
+                                <note nom="CC" coeff="75%"/>
+                                <note nom="TP" coeff="25%"/>
+                            </matiere>
+
+                            <matiere nom="ETRS401_ETRS" ects="3">
+                                <note nom="CC" coeff="75%"/>
+                                <note nom="TP" coeff="25%"/>
+                            </matiere>
+                        </ue>
+
+                        <ue nom="UE405">
+                            <matiere nom="ETRS403_ETRS" ects="3" sites="chy">
+                                <note nom="ORAL"/>
+                            </matiere>
+
+                            <matiere nom="INFO405_MIASE" ects="3" sites="acy">
+                                <note nom="CC" coeff="70%"/>
+                                <note nom="TP" coeff="30%"/>
+                            </matiere>
+
+                            <matiere nom="ETRS404_ETRS" ects="3">
+                                <note nom="CC" coeff="70%"/>
+                                <note nom="TP" coeff="30%"/>
+                            </matiere>
+                        </ue>
+                    </coloration>
+
+                    <coloration nom="PC-Techno-Méca" sites="acy,chy">
+                        <ue nom="UE402">
+                            <matiere nom="MATH401_PHYS" ects="3">
+                                <note nom="CC1" coeff="50%"/>
+                                <note nom="CC2" coeff="50%"/>
+                            </matiere>
+
+                            <matiere nom="PHYS403_PC" ects="3">
+                                <note nom="CC" coeff="80%"/>
+                                <note nom="WIMS" coeff="20%"/>
+                            </matiere>
+
+                            <matiere nom="PHYS402_PC" ects="3">
+                                <note nom="CC"/>
+                            </matiere>
+
+                            <matiere nom="PHYS404_PC" ects="3">
+                                <note nom="CC"/>
+                            </matiere>
+                        </ue>
+
+                        <ue nom="UE403">
+                            <matiere nom="TMEC402_PEIP" ects="3" sites="chy">
+                                <groupe coeff="75%">
+                                    <note nom="CC1" coeff="50%"/>
+                                    <note nom="CC2" coeff="50%"/>
+                                </groupe>
+                                <note nom="TP" coeff="25%"/>
+                            </matiere>
+
+                            <matiere nom="TMEC401_PEIP" ects="3" sites="chy">
+                                <note nom="CC"/>
+                            </matiere>
+                        </ue>
+                    </coloration>
+                </ue>
+
+                <ue nom="UE401">
+                    <matiere nom="GIND401_PEIP" ects="3">
+                        <note nom="STAGE"/>
+                    </matiere>
+
+                    <matiere nom="ANGL401_SCEM" ects="3">
+                        <note nom="CONTINU"/>
+                    </matiere>
+                </ue>
+            </semestre>
+        </niveau>
+    </annee>
+</annees>

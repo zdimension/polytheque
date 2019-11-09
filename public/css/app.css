@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+.livreimg {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.frame {
+    height: 290px;
+    width: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.car-control-dark {
+    filter: invert(100%) opacity(0.3);
+    height: 290px;
+}
+
+.filehidden {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.filehidden + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.filehidden:focus + label,
+.filehidden + label:hover {
+    background-color: red;
+}
+
+#nav-logo {
+    filter: brightness(100%);
+    transition: all 0.15s ease;
+}
+
+#nav-logo:hover {
+    filter: brightness(80%);
+}
+
+.starred {
+    color: orange;
+}
+
+.custom-file-input ~ .custom-file-label::after {
+    padding-top: 0.35em;
+    content: "\f07c" !important;
+    display: inline-block;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.custom-file-label {
+    display: flex;
+}
+
+.custom-file-label > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: calc(100% - 40px);
+}
+
+.card-hf-column {
+    padding: 0.75rem;
+    border-right: 1px solid rgba(0,0,0,.125);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.card-hf-divided {
+    padding: 0 0 0 0 !important;
+    display: flex;
+}
+
+.feedback {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+}
+
+.rating-container .filled-stars {
+    text-shadow: none;
+}
+
+.rating-disabled *, .rating-disabled > * {
+    cursor: default !important;
+}
+
+.table-thin-padding td {
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+}
+
+.table-no-border > tbody > tr:first-child > td {
+    border-top: 0;
+}
+
+.card-body-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 0 0 0 !important;
+}
+
+.card-body-column {
+    padding: 15px;
+}
+
+.card-body-row > .card-body-column:not(:last-child) {
+    border-right: 1px solid rgba(0,0,0,.125);
+}
