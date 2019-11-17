@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Utilisateur;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -81,14 +81,14 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Utilisateur
      */
 
     protected function create(array $data)
     {
-        return User::create(array_merge($data, [
+        return Utilisateur::create(array_merge($data, [
             "mdp" => password_hash($data["mdp"], PASSWORD_DEFAULT),
-            "privileges" => User::NORMAL
+            "privileges" => Utilisateur::NORMAL
         ]));
     }
 }

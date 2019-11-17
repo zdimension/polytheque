@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Utilisateur extends Authenticatable
 {
     const CREATED_AT = 'date_creation';
     const UPDATED_AT = 'date_modification';
@@ -15,8 +15,6 @@ class User extends Authenticatable
     const NORMAL = 10;
 
     use Notifiable;
-
-    protected $table = "users";
 
     /**
      * The attributes that are mass assignable.
@@ -70,4 +68,8 @@ class User extends Authenticatable
         return $this->mdp;
     }
 
+    public function cursus()
+    {
+        return $this->hasMany('App\Cursus');
+    }
 }

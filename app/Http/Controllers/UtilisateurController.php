@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Controllers\Auth\RegisterController;
-use App\PointRelais;
-use App\User;
+use App\Utilisateur;
 
-class UserController extends Controller
+class UtilisateurController extends Controller
 {
     public function voirProfil()
     {
-        if (!auth()->check()) abort(403);
-
         return view("auth.register", ["edit" => true]);
     }
 

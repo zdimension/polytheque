@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\User;
+use App\Utilisateur;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,23 +15,23 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         \Blade::if('respo_vente', function () {
-            return auth()->check() && auth()->user()->est(User::RESPO_VENTE);
+            return auth()->check() && auth()->user()->est(Utilisateur::RESPO_VENTE);
         });
 
         \Blade::if('respo_comm', function () {
-            return auth()->check() && auth()->user()->est(User::RESPO_COMM);
+            return auth()->check() && auth()->user()->est(Utilisateur::RESPO_COMM);
         });
 
         \Blade::if('respo_adh', function () {
-            return auth()->check() && auth()->user()->est(User::RESPO_ADH);
+            return auth()->check() && auth()->user()->est(Utilisateur::RESPO_ADH);
         });
 
         \Blade::if('adherent', function () {
-            return auth()->check() && auth()->user()->est(User::ADHERENT);
+            return auth()->check() && auth()->user()->est(Utilisateur::ADHERENT);
         });
 
         \Blade::if('admin', function () {
-            return auth()->check() && auth()->user()->est(User::ADMIN);
+            return auth()->check() && auth()->user()->est(Utilisateur::ADMIN);
         });
 
         \Blade::setEchoFormat('nl2br(e(%s))');

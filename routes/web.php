@@ -24,7 +24,7 @@ Auth::routes();
 
     Route::prefix("/compte")->name("compte.")->group(function ()
     {
-        Route::get('/', 'UserController@voirProfil')->name("view");
-        Route::patch('/', 'UserController@modifierProfil')->name("edit");
+        Route::get('/', 'UtilisateurController@voirProfil')->name("view");
+        Route::patch('/', 'UtilisateurController@modifierProfil')->name("edit");
     });
 //});

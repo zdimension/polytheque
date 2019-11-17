@@ -53,12 +53,12 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
 
                 if (auth()->check())
                 {
-                    if (auth()->user()->est(App\User::ADMIN))
+                    if (auth()->user()->est(App\Utilisateur::ADMIN))
                     {
                         //$liens["genres.list"] = ["Gestion des genres", "th"];
                     }
 
-                    if (auth()->user()->est(App\User::NORMAL))
+                    if (auth()->user()->est(App\Utilisateur::NORMAL))
                     {
 
                     }
