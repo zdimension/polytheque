@@ -28,3 +28,10 @@ Auth::routes();
         Route::patch('/', 'UtilisateurController@modifierProfil')->name("edit");
     });
 //});
+
+    Route::prefix("/cursus")->name("cursus.")->group(function ()
+    {
+        Route::get('/', 'CursusController@index')->name("list");
+        Route::get('/effacer', 'CursusController@effacer')->name("clearForm");
+        Route::put('/ajouter', 'CursusController@ajouter')->name("add");
+    });
