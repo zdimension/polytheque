@@ -20,14 +20,6 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
           integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
           integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css"
-          integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/css/star-rating.min.css"
-          integrity="sha256-erS4t9C/AvfShlGZwxOG4dnzQuWJhPDPf4xBcYnj+xc=" crossorigin="anonymous"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/themes/krajee-fas/theme.min.css"
-          integrity="sha256-+HzjedSWe14YCfXdjzDfnkfkfhNiczN3zJHdC2DmADk=" crossorigin="anonymous"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack("head")
 </head>
@@ -60,7 +52,8 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
 
                     if (auth()->user()->est(App\Utilisateur::NORMAL))
                     {
-
+                        $liens["cursus.list"] = ["Mes cursus", "graduation-cap"];
+                        $liens["edt.index"] = ["Emploi du temps", "calendar-day"];
                     }
                 };
 
@@ -78,10 +71,10 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
                 </li>
                 <?php
                 }
+
+                foreach($liens as $url => [$n, $icon])
+                    display_link($url, $n, $icon);
                 ?>
-                @foreach($liens as $url => [$n, $icon])
-                    <?php display_link($url, $n, $icon); ?>
-                @endforeach
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
@@ -110,7 +103,7 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
             </ul>
         </div>
     </nav>
-    <div class="container-fluid" style="padding-top: 20px">
+    <div class="container-fluid" style="padding-top: 20px; padding-bottom: 15px">
         @yield('content')
     </div>
 </div>
@@ -120,14 +113,6 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"
-        integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/js/star-rating.min.js"
-        integrity="sha256-TX3InxvStdA3RUVQNAd3B6GW0P8aJPHmGoDxlwcAr98=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/js/locales/fr.js"
-        integrity="sha256-8kugmo5zrICka3UPXh0oyiaqCUGKRO9oVaUM3lNIMGc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/themes/krajee-fas/theme.min.js"
-        integrity="sha256-2ZLo+r+uunQnJNFwHWSurqLFvLbcZxN4BkHZ+bBl3tg=" crossorigin="anonymous"></script>
 <script src="{{ asset("js/app.js") }}"></script>
 @stack("foot")
 </body>
