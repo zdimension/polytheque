@@ -1,6 +1,11 @@
 <?xml version='1.0' standalone='yes'?>
 <annees>
     <annee a="2019">
+        <niveau nom="PEIP1">
+            <semestre nom="S1"/>
+            <semestre nom="S2"/>
+        </niveau>
+
         <niveau nom="PEIP2">
             <semestre nom="S3">
                 <ue nom="UE301">
@@ -77,7 +82,7 @@
                 </ue>
             </semestre>
 
-            <semestre>
+            <semestre nom="S4">
                 <ue nom="UE400">
                     <coloration nom="Sciences et technologies" sites="acy,chy">
                         <ue nom="UE402">
@@ -190,6 +195,21 @@
                     </matiere>
                 </ue>
             </semestre>
+        </niveau>
+
+        <niveau nom="FI3">
+            <semestre nom="S5"/>
+            <semestre nom="S6"/>
+        </niveau>
+
+        <niveau nom="FI4">
+            <semestre nom="S7"/>
+            <semestre nom="S8"/>
+        </niveau>
+
+        <niveau nom="FI5">
+            <semestre nom="S9"/>
+            <semestre nom="S10"/>
         </niveau>
     </annee>
 </annees>
