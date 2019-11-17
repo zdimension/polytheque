@@ -13,21 +13,21 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
+include_once("auth.php");
 
-//Route::group(['middleware' => 'auth'], function ()
-//{
-    Route::get('/', "HomeController@index")->name("root");
+Route::get('/', "HomeController@index")->name("root");
 
+Route::get('/legal', function() {
+    return view("legal");
+});
 
-    Route::get('/logout', 'Auth\LoginController@logout');
-
+Route::group(['middleware' => 'auth'], function ()
+{
     Route::prefix("/compte")->name("compte.")->group(function ()
     {
         Route::get('/', 'UtilisateurController@voirProfil')->name("view");
         Route::patch('/', 'UtilisateurController@modifierProfil')->name("edit");
     });
-//});
 
     Route::prefix("/cursus")->name("cursus.")->group(function ()
     {
@@ -35,3 +35,10 @@ Auth::routes();
         Route::get('/effacer', 'CursusController@effacer')->name("clearForm");
         Route::put('/ajouter', 'CursusController@ajouter')->name("add");
     });
+
+    Route::prefix("/edt")->name("edt.")->group(function ()
+    {
+        Route::get('/', 'EDTController@index')->name("index");
+        Route::get('/recherche/{query}', 'EDTController@search')->name("search");
+    });
+});
