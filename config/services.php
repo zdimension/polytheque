@@ -30,9 +30,19 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
+        'model' => App\Utilisateur::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+
+    'google' => [
+        'key' => env('GOOGLE_KEY')
+    ],
+
+    'ade' => [
+        'root' => env('ADE_API_ROOT'),
+        'username' => env('ADE_USERNAME'),
+        'password' => env('ADE_PASSWORD')
+    ]
 
 ];
