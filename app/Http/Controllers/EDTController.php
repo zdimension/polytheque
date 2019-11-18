@@ -15,6 +15,8 @@ class EDTController extends Controller
 
     private $connexion = false;
 
+    private $res = "null";
+
     public function index()
     {
         return view('edt');
@@ -35,7 +37,10 @@ class EDTController extends Controller
         }
         catch (\Exception $e)
         {
-            return ["error" => $e->getMessage()];
+            $msg = $e->getMessage();
+            if (Str::contains($msg, "could not be parsed as XML"))
+                $msg .= "\n\n<<<\n" . $this->res . "EOF";
+            return ["error" => $msg];
         }
     }
 
@@ -121,8 +126,8 @@ class EDTController extends Controller
 
         try
         {
-            $res = $client->get(config("services.ade.root"), ["query" => $params])->getBody()->getContents();
-            return new \SimpleXMLElement($res);
+            $this->res = $client->get(config("services.ade.root"), ["query" => $params])->getBody()->getContents();
+            return new \SimpleXMLElement($this->res);
         }
         finally
         {
