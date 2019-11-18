@@ -1,47 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Reset Password</div>
+    <div class="w-100">
+        <div class="card mx-auto text-center" style="width: 450px">
+            <div class="card-header"><h4 class="mb-0">Mot de passe oublié</h4></div>
 
-                    <div class="panel-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+            <div class="card-body">
+                <form method="POST" action="{{ route('password.email') }}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
 
-                        <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
-                            {{ csrf_field() }}
+                    @include("widgets.info")
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <input id="login" type="text" class="form-control" name="email" placeholder="Adresse e-mail"
+                               value="{{ old('email') }}" required autofocus>
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email"
-                                           value="{{ old('email') }}" required>
-
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Send Password Reset Link
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                        @include("widgets.field-error", ["field" => "email"])
                     </div>
-                </div>
+
+                    <div class="form-group mb-0">
+                        <button type="submit" class="btn btn-primary">
+                            Envoyer
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
