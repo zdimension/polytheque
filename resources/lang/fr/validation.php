@@ -30,7 +30,7 @@ return [
         'array'   => 'Le tableau :attribute doit contenir entre :min et :max éléments.',
     ],
     'boolean'              => 'Le champ :attribute doit être vrai ou faux.',
-    'confirmed'            => 'Les champ de confirmation de :attribute ne correspondent pas.',
+    'confirmed'            => 'Les champs de confirmation de :attribute ne correspondent pas.',
     'date'                 => "Le champ :attribute n'est pas une date valide.",
     'date_equals'          => 'Le champ :attribute doit être une date égale à :date.',
     'date_format'          => 'Le champ :attribute ne correspond pas au format :format.',
