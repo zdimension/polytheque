@@ -72,17 +72,17 @@ function old_($name)
                     <div class="form-row">
                         <div class="col">
                             <div class="form-group mb-0">
-                                <input id="mdp" type="password" minlength="8"
-                                       class="form-control{{ $errors->has('mdp') ? ' is-invalid' : '' }}"
-                                       name="mdp"
+                                <input id="password" type="password" minlength="8"
+                                       class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                       name="password"
                                        placeholder="Mot de passe @if(!isset($edit))*@endif">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group mb-0">
-                                <input id="mdp_confirmation" type="password" minlength="8"
-                                       class="form-control{{ $errors->has('mdp') ? ' is-invalid' : '' }}"
-                                       name="mdp_confirmation"
+                                <input id="password_confirmation" type="password" minlength="8"
+                                       class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                       name="password_confirmation"
                                        placeholder="Confirmer le mot de passe @if(!isset($edit))*@endif">
                             </div>
                         </div>
@@ -91,7 +91,7 @@ function old_($name)
                         </div>
                     </div>
 
-                    @include("widgets.field-error", ["field" => "mdp"])
+                    @include("widgets.field-error", ["field" => "password"])
 
                     <div class="form-group mb-0">
                         <button type="submit" class="btn btn-primary">
