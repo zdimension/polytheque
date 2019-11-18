@@ -57,8 +57,8 @@ class RegisterController extends Controller
     public static function validationRules()
     {
         return [
-            'email' => 'required|string|email|max:255|unique:users',
-            'mdp' => 'required|string|min:8|confirmed',
+            'email' => 'required|string|email|max:255|unique:' . (new Utilisateur)->getTable(),
+            'password' => 'required|string|min:8|confirmed',
             'nom' => 'required|string|max:255'
         ];
     }
@@ -66,7 +66,7 @@ class RegisterController extends Controller
     public static function validationMessages()
     {
         return [
-            "mdp.confirmed" => "Les mots de passe ne correspondent pas.",
+            "password.confirmed" => "Les mots de passe ne correspondent pas.",
             "email.unique" => "Un compte avec cette adresse e-mail existe déjà.",
             "email.email" => "L'adresse e-mail n'est pas valide."
         ];
@@ -87,7 +87,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Utilisateur::create(array_merge($data, [
-            "mdp" => password_hash($data["mdp"], PASSWORD_DEFAULT),
+            "mdp" => password_hash($data["password"], PASSWORD_DEFAULT),
             "privileges" => Utilisateur::NORMAL
         ]));
     }
