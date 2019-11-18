@@ -39,14 +39,13 @@
                         </button>
                     </div>
 
-                    <div class="form-group">
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                    <div class="form-group mb-0">
+                        <a class="btn btn-link pb-0" href="{{ route('password.request') }}">
                             Mot de passe oublié ?
                         </a>
                     </div>
                 </form>
             </div>
         </div>
-
     </div>
 @endsection
