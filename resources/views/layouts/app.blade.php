@@ -106,6 +106,12 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
     <div class="container-fluid" style="padding-top: 20px; padding-bottom: 15px">
         @yield('content')
     </div>
+    <div class="footer-spacer"></div>
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted">Copyright © <a href="https://zdimension.fr">zdimension</a> – <a href="{{route("legal")}}">CGU</a></span>
+        </div>
+    </footer>
 </div>
 <!-- Scripts -->
 
