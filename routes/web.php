@@ -29,16 +29,19 @@ Route::group(['middleware' => 'auth'], function ()
         Route::patch('/', 'UtilisateurController@modifierProfil')->name("edit");
     });
 
-    Route::prefix("/cursus")->name("cursus.")->group(function ()
+    Route::group(['middleware' => 'verified'], function()
     {
-        Route::get('/', 'CursusController@index')->name("list");
-        Route::get('/effacer', 'CursusController@effacer')->name("clearForm");
-        Route::put('/ajouter', 'CursusController@ajouter')->name("add");
-    });
+        Route::prefix("/cursus")->name("cursus.")->group(function ()
+        {
+            Route::get('/', 'CursusController@index')->name("list");
+            Route::get('/effacer', 'CursusController@effacer')->name("clearForm");
+            Route::put('/ajouter', 'CursusController@ajouter')->name("add");
+        });
 
-    Route::prefix("/edt")->name("edt.")->group(function ()
-    {
-        Route::get('/', 'EDTController@index')->name("index");
-        Route::get('/recherche/{query}', 'EDTController@search')->name("search");
+        Route::prefix("/edt")->name("edt.")->group(function ()
+        {
+            Route::get('/', 'EDTController@index')->name("index");
+            Route::get('/recherche/{query}', 'EDTController@search')->name("search");
+        });
     });
 });
