@@ -19,7 +19,7 @@ Route::get('/', "HomeController@index")->name("root");
 
 Route::get('/legal', function() {
     return view("legal");
-});
+})->name("legal");
 
 Route::group(['middleware' => 'auth'], function ()
 {
