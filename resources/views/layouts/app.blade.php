@@ -71,7 +71,7 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
 
                     if (auth()->user()->est(App\Utilisateur::NORMAL))
                     {
-                        $liens["cursus.list"] = ["Mes cursus", "graduation-cap"];
+                        $liens["cursus.list"] = ["Cursus", "graduation-cap"];
                         $liens["edt.index"] = ["Emploi du temps", "calendar-day"];
                     }
                 };
