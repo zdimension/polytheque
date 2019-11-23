@@ -40,7 +40,7 @@
                 </li>
                 <li>
                     Les différentes règles énoncées ici s'appliquent à tous les utilisateurs sans exception, sauf en cas
-                    de corruption par voie financière, auquel cas des assouplissements seront possibles.
+                    de <a href="{{asset("resources/utile/we5i0xvj11z31.jpg")}}">corruption</a> par voie financière, auquel cas des assouplissements seront possibles.
                 </li>
                 <li>
                     Tout signalement d'une faille de sécurité sera récompensée par un cookie.
@@ -66,6 +66,13 @@
                 <li>
                     <a href="https://www.youtube.com/watch?v=l7tURWFLkd0">Aïe aïe aïe.</a>
                 </li>
+                <li>
+                    Moodle est <a href="{{asset("resources/utile/52467422_645502415898275_709832878552252416_n.jpg")}}">extrêmement</a>
+                    <a href="{{asset("resources/utile/57467954_268903900719714_5163020052408041472_n.png")}}">stable</a>.
+                </li>
+                <li>
+                    Ça ne s'arrête <a href="{{asset("resources/utile/78159900_3006112146084089_3218336440773509120_n.png")}}">jamais</a>.
+                </li>
             </ol>
 
             <h4 class="mb-3">Données personnelles</h4>
@@ -73,7 +80,7 @@
             <ol class="rules">
                 <li>
                     Le site ne stocke que les informations utiles au compte utilisateur : nom, adresse e-mail, mot de
-                    passe hashé en bcrypt et choix de cursus.
+                    passe <a href="{{asset("resources/utile/0002355.jpeg")}}">hashé</a> en bcrypt et choix de cursus.
                 </li>
                 <li>
                     Conformément à la loi « informatique et libertés » du 6 janvier 1978, vous bénéficiez d’un droit

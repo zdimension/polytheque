@@ -13,7 +13,26 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- balises meta -->
+    <meta name="author" content="zdimension"/>
+    <meta name="copyright" content="zdimension"/>
+
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:title" content="Polythèque">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{url("")}}">
+    <meta property="og:image" content="{{asset("resources/assets/logo_square.png")}}">
+    <meta property="og:site_name" content="Polythèque">
+    <meta property="og:description" content="Polythèque">
+
+    <meta name="twitter:description" content="Polythèque">
+    <meta name="twitter:title" content="Polythèque">
+    <meta name="twitter:text:title" content="Polythèque">
+    <meta name="twitter:creator" content="@zdimension_"/>
+
     <title>{{ config('app.name', 'Polythèque') }}</title>
+
+    <link rel="icon" type="image/png" href="{{asset("resources/assets/logo_square.png")}}"/>
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
@@ -61,18 +80,19 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
                 {
                     return Route::currentRouteName() == $url || Str::startsWith(Route::currentRouteName(), $url . ".");
                 }
-                function display_link($url, $n, $icon, $get="")
+                function display_link($url, $n, $icon, $get = "")
                 {
-                    ?>
-                    <li class="nav-item {{is_active($url) ? "active" : ""}}">
+                ?>
+                <li class="nav-item {{is_active($url) ? "active" : ""}}">
                     <a class="nav-link" href="{{route($url).$get}}">@if($icon !== null) <i
-                                class="mr-1 fas fa-{{$icon}}"></i> @endif {!!$n!!} <?=is_active($url) ? '<span class="sr-only">(current)</span>' : ""?>
+                                class="mr-1 fas fa-{{$icon}}"></i> @endif {!!$n!!} <?=is_active($url) ?
+                            '<span class="sr-only">(current)</span>' : ""?>
                     </a>
                 </li>
                 <?php
                 }
 
-                foreach($liens as $url => [$n, $icon])
+                foreach ($liens as $url => [$n, $icon])
                     display_link($url, $n, $icon);
                 ?>
             </ul>
@@ -86,7 +106,8 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
                     ?>
                 @else
                     <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle {{is_active("compte") ? "active" : ""}}" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle {{is_active("compte") ? "active" : ""}}" href="#"
+                           id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ Auth::user()->nomAffichage() }}
                         </a>
@@ -109,12 +130,26 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
     <div class="footer-spacer"></div>
     <footer class="footer">
         <div class="container text-center">
-            <span class="text-muted">Copyright © <a href="https://zdimension.fr">zdimension</a> – <a href="{{route("legal")}}">CGU</a></span>
+            <span class="text-muted">Copyright © <a href="https://zdimension.fr">zdimension</a> – <a
+                        href="{{route("legal")}}">CGU</a></span>
         </div>
     </footer>
 </div>
-<!-- Scripts -->
 
+<!-- Scripts -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-66960834-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-66960834-2');
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
