@@ -43,7 +43,7 @@
                     de <a href="{{asset("resources/utile/we5i0xvj11z31.jpg")}}">corruption</a> par voie financière, auquel cas des assouplissements seront possibles.
                 </li>
                 <li>
-                    Tout signalement d'une faille de sécurité sera récompensée par un cookie.
+                    Tout signalement d'une faille de sécurité sera récompensé par un cookie.
                 </li>
                 <li>
                     On ne parle pas du <s>Fight Club</s> <a href="{{asset("resources/utile/33858569.png")}}">CC1 de MATH302</a>.
