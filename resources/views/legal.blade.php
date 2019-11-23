@@ -46,7 +46,7 @@
                     Tout signalement d'une faille de sécurité sera récompensée par un cookie.
                 </li>
                 <li>
-                    On ne parle pas du <s>Fight Club</s> CC2 de MATH301.
+                    On ne parle pas du <s>Fight Club</s> <a href="{{asset("resources/utile/33858569.png")}}">CC1 de MATH302</a>.
                     <small>Ni du <a href="{{asset("resources/utile/56462404_402806543843630_5623021319076446208_n.png")}}">CC</a> de <a href="{{asset("resources/utile/51892073_1887584891370544_6036024747194580992_n.png")}}">MATH201</a>.</small>
                     <small>Ni du <a href="{{asset("resources/utile/76605211_978624182504313_2953825223377420288_o.jpg")}}">CC de CHIM301</a>.</small>
                 </li>
