@@ -67,7 +67,7 @@
                     <a href="https://www.youtube.com/watch?v=l7tURWFLkd0">Aïe aïe aïe.</a>
                 </li>
                 <li>
-                    Moodle est <a href="{{asset("resources/utile/52467422_645502415898275_709832878552252416_n.jpg")}}">extrêmement</a>
+                    Moodle <a href="{{asset("resources/utile/4525895.jpg")}}">est</a> <a href="{{asset("resources/utile/52467422_645502415898275_709832878552252416_n.jpg")}}">extrêmement</a>
                     <a href="{{asset("resources/utile/57467954_268903900719714_5163020052408041472_n.png")}}">stable</a>.
                 </li>
                 <li>
