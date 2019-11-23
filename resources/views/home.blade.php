@@ -1,24 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @yield("searchHead")
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+    <h2>Accueil</h2>
 
-                    <div class="panel-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        You are logged in!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h4>Pas grand chose à voir ici pour l'instant. Lisez bien les <a href="{{route("legal")}}">CGU</a></h4>
 @endsection
