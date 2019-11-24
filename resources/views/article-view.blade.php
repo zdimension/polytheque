@@ -12,12 +12,18 @@
             <div class="card-hf-column">
                 le {{$art->date_creation->format("d/m/Y")}}
             </div>
-            <div class="card-hf-column">
-                <a class="btn btn-primary" href="{{route("article.edit", ["art" => $art])}}"><i class="fa fa-pen mr-1" aria-hidden="true"></i> Modifier</a>
-            </div>
-            <div class="card-hf-column">
-                <a class="btn btn-danger" href="{{route("article.delete", ["art" => $art])}}"><i class="fa fa-trash mr-1" aria-hidden="true"></i> Supprimer</a>
-            </div>
+            @auth
+                @if (auth()->user()->est(\App\Utilisateur::AUTEUR))
+                    <div class="card-hf-column">
+                        <a class="btn btn-primary" href="{{route("article.edit", ["art" => $art])}}"><i
+                                    class="fa fa-pen mr-1" aria-hidden="true"></i> Modifier</a>
+                    </div>
+                    <div class="card-hf-column">
+                        <a class="btn btn-danger" href="{{route("article.delete", ["art" => $art])}}"><i
+                                    class="fa fa-trash mr-1" aria-hidden="true"></i> Supprimer</a>
+                    </div>
+                @endif
+            @endauth
         </div>
         <div class="card-body">
             {!!markdown($art->contenu)!!}
