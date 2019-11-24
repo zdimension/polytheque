@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 
 function exec_cmd($cmd)
@@ -73,4 +74,11 @@ function isGit()
 function getCurrentCommit()
 {
     return exec_cmd("git rev-parse HEAD");
+}
+
+function markdown($str)
+{
+    return new HtmlString(
+        app(Parsedown::class)->setSafeMode(true)->text($str)
+    );
 }

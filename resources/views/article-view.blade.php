@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="card-body">
-            {{$art->contenu}}
+            {!!markdown($art->contenu)!!}
         </div>
     </div>
 @endsection
