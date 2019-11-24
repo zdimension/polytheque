@@ -10,7 +10,7 @@
 
     <ul class="list-group">
         @forelse(\App\Article::all()->sortByDesc("date_creation") as $art)
-            <li class="list-group-item">$art->titre</li>
+            <li class="list-group-item"><a href="{{route("article.view", ["art" => $art])}}">{{$art->titre}}</a></li>
         @empty
             Aucun article pour le moment.
         @endforelse
