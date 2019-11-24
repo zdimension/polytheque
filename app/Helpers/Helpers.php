@@ -79,6 +79,6 @@ function getCurrentCommit()
 function markdown($str)
 {
     return new HtmlString(
-        app(Parsedown::class)->setSafeMode(true)->text($str)
+        app(Parsedown::class)->text($str)
     );
 }
