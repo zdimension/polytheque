@@ -135,8 +135,16 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
     <div class="footer-spacer"></div>
     <footer class="footer">
         <div class="container text-center">
-            <span class="text-muted">Copyright © <a href="https://zdimension.fr">zdimension</a> – <a
-                        href="{{route("legal")}}">CGU</a> @if(isGit()) – <a href="http://github.com/zdimension/polytheque/commit/{{getCurrentCommit()}}">{{substr(getCurrentCommit(), 0, 8)}}</a> @endif</span>
+            <span class="text-muted" style="line-height: normal">
+                Copyright © <a href="https://zdimension.fr">zdimension</a> –
+                <a href="{{route("legal")}}">CGU</a><br/>
+                <div style="font-size: 75%;margin-top: 3px;">
+                @if(isGit())
+                    <a href="http://github.com/zdimension/polytheque/commit/{{getCurrentCommit()}}">{{substr(getCurrentCommit(), 0, 8)}}</a> –
+                @endif
+                page générée en {{ deci(microtime(true) - LARAVEL_START, 4) }} secondes
+                </div>
+            </span>
         </div>
     </footer>
 </div>
