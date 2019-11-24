@@ -3,11 +3,12 @@
 @push("foot")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js" integrity="sha256-CVkji/u32aj2TeC+D13f7scFSIfphw2pmu4LaKWMSY8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-html.js" integrity="sha256-+LuWQyoA65gA+u1R8aXl/CeNMelII6+kEngEgjYECfI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-markdown.js" integrity="sha256-y7CQ+vmcCTzRcZRodqknIaPkRg2nFIS91PMCbjofpAI=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/theme-monokai.js" integrity="sha256-Fc4eJOe8KtF8kDLqSR94vUiJ1ohvKDxznSMxI3RavOw=" crossorigin="anonymous"></script>    <script>
         $(document).ready(function() {
             let editor = ace.edit("editor");
             editor.setTheme("ace/theme/monokai");
-            editor.session.setMode("ace/mode/html");
+            editor.session.setMode("ace/mode/markdown");
 
             let inp = $('#contenu');
             editor.getSession().on("change", function () {
