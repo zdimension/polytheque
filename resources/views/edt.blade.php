@@ -50,12 +50,11 @@
 
                             if (html === undefined) {
                                 html = "Une erreur est survenue lors de la recherche : <pre class='my-1 ml-3'>" + data["error"] +
-                                "</pre>Sûrement un coup des chambériens.";
+                                    "</pre>Sûrement un coup des chambériens.";
                             }
 
                             showError(html);
-                        }
-                        else {
+                        } else {
                             for (let res of data) {
                                 results.append(
                                     $("<a></a>")
@@ -63,20 +62,20 @@
                                         .addClass("list-group-item")
                                         .addClass("list-group-item-action")
                                         .text(res["path"].replace(/\./g, " ⯈ ") + res["name"])
-                                        .click(function(e) {
+                                        .click(function (e) {
                                             e.preventDefault();
                                         })
                                 );
                             }
                             results.show();
 
-                            $("html, body").animate({ scrollTop: results.offset().top }, 1000);
+                            $("html, body").animate({scrollTop: results.offset().top}, 1000);
                         }
                     })
-                    .fail(function() {
+                    .fail(function () {
                         showError("Une erreur inconnue est survenue lors de la recherche.");
                     })
-                    .always(function() {
+                    .always(function () {
                         search.prop("disabled", false);
                         $("#btnSearch").prop("disabled", false);
                         $("#searchIcon").show();

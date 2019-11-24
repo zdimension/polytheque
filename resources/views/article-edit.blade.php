@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
 @push("foot")
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js" integrity="sha256-CVkji/u32aj2TeC+D13f7scFSIfphw2pmu4LaKWMSY8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-html.js" integrity="sha256-+LuWQyoA65gA+u1R8aXl/CeNMelII6+kEngEgjYECfI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-markdown.js" integrity="sha256-y7CQ+vmcCTzRcZRodqknIaPkRg2nFIS91PMCbjofpAI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/theme-monokai.js" integrity="sha256-Fc4eJOe8KtF8kDLqSR94vUiJ1ohvKDxznSMxI3RavOw=" crossorigin="anonymous"></script>    <script>
-        $(document).ready(function() {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js"
+            integrity="sha256-CVkji/u32aj2TeC+D13f7scFSIfphw2pmu4LaKWMSY8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-html.js"
+            integrity="sha256-+LuWQyoA65gA+u1R8aXl/CeNMelII6+kEngEgjYECfI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-markdown.js"
+            integrity="sha256-y7CQ+vmcCTzRcZRodqknIaPkRg2nFIS91PMCbjofpAI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/theme-monokai.js"
+            integrity="sha256-Fc4eJOe8KtF8kDLqSR94vUiJ1ohvKDxznSMxI3RavOw=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
             let editor = ace.edit("editor");
             editor.setTheme("ace/theme/monokai");
             editor.session.setMode("ace/mode/markdown");
@@ -24,13 +29,13 @@
             let last = null;
             let preview = $("#preview");
 
-            setInterval(function() {
+            setInterval(function () {
                 if (last === inp.val()) return;
 
                 $.post("{{route("article.preview")}}", {
                     "text": inp.val(),
                     "_token": "{{csrf_token()}}"
-                }, function(data) {
+                }, function (data) {
                     preview.html(data);
                 });
 
@@ -54,7 +59,8 @@
             <h2 class="mb-0">{{@$create ? "Créer un " : "Modifier l'"}}article</h2>
         </div>
         <div class="card-body">
-            <form action="{{@$create ? route("article.createSubmit") : route("article.submit", ["art" => $art])}}" method="post">
+            <form action="{{@$create ? route("article.createSubmit") : route("article.submit", ["art" => $art])}}"
+                  method="post">
                 {{ csrf_field() }}
                 {{ method_field("PUT") }}
 
@@ -66,11 +72,11 @@
                            value="{{ @$art->titre }}" required>
                 </div>
 
-                <input type="hidden" id="contenu" name="contenu" />
+                <input type="hidden" id="contenu" name="contenu"/>
 
                 <div class="row mb-3">
                     <div class="col w-50 pr-1">
-                <div id="editor" class="w-100" style="height: 100%; font-size: 14px;"></div>
+                        <div id="editor" class="w-100" style="height: 100%; font-size: 14px;"></div>
                     </div>
                     <div class="col w-50 pl-1">
                         <div class="border" style="height: 450px; overflow: scroll;">

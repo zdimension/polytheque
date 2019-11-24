@@ -10,7 +10,8 @@
 
     <ul class="list-group">
         @forelse(\App\Article::all()->sortByDesc("date_creation") as $art)
-            <a class="list-group-item list-group-item-action" style="font-weight: bold; font-size: 125%" href="{{route("article.view", ["art" => $art])}}">{{$art->titre}}</a>
+            <a class="list-group-item list-group-item-action" style="font-weight: bold; font-size: 125%"
+               href="{{route("article.view", ["art" => $art])}}">{{$art->titre}}</a>
         @empty
             Aucun article pour le moment.
         @endforelse
