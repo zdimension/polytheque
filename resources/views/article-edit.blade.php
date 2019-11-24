@@ -11,9 +11,39 @@
             editor.session.setMode("ace/mode/markdown");
 
             let inp = $('#contenu');
-            editor.getSession().on("change", function () {
+            editor.getSession().on("change", refreshField);
+
+            function refreshField() {
                 inp.val(editor.getSession().getValue());
-            });
+            }
+
+            editor.getSession().setValue({!! @json_encode($art->contenu) ?? "" !!} || "");
+
+            refreshField();
+
+            let last = null;
+            let preview = $("#preview");
+
+            setInterval(function() {
+                if (last === inp.val()) return;
+
+                $.post("{{route("article.preview")}}", {
+                    "text": inp.val(),
+                    "_token": "{{csrf_token()}}"
+                }, function(data) {
+                    preview.html(data);
+                });
+
+                last = inp.val();
+            }, 200);
+
+            window.onbeforeunload = function (e) {
+                e = e || window.event;
+                if (e) {
+                    e.returnValue = "T'es sûr fréro?";
+                }
+                return "T'es sûr fréro?";
+            };
         });
     </script>
 @endpush
@@ -36,9 +66,18 @@
                            value="{{ @$art->titre }}" required>
                 </div>
 
-                <input type="hidden" id="contenu" name="contenu" value="{{@$art->contenu}}" />
+                <input type="hidden" id="contenu" name="contenu" />
 
-                <div id="editor" class="w-100 mb-3" style="height: 450px; font-size: 14px;">{{@$art->contenu}}</div>
+                <div class="row mb-3">
+                    <div class="col w-50 pr-1">
+                <div id="editor" class="w-100" style="height: 100%; font-size: 14px;"></div>
+                    </div>
+                    <div class="col w-50 pl-1">
+                        <div class="border" style="height: 450px; overflow: scroll;">
+                            <div id="preview"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group mb-0">
                     <button type="submit" class="btn btn-primary">
                         {{@$create ? "Créer" : "Modifier"}}

@@ -43,6 +43,8 @@ Route::group(['middleware' => 'auth'], function ()
             Route::get("/{art}/modifier", "ArticleController@modifier")->name("edit");
             Route::put("/{art}/modifier", "ArticleController@envoyer")->name("submit");
             Route::get("/{art}/supprimer", "ArticleController@supprimer")->name("delete");
+
+            Route::post("/apercu", "ArticleController@apercu")->name("preview");
         });
 
         Route::prefix("/cursus")->name("cursus.")->group(function ()

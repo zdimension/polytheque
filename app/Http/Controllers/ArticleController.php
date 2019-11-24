@@ -44,4 +44,11 @@ class ArticleController extends Controller
 
         return redirect(route("root"));
     }
+
+    public function apercu()
+    {
+        if (!request()->has("text")) abort(404);
+
+        return markdown(request("text"));
+    }
 }
