@@ -163,6 +163,22 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
 
     gtag('config', 'UA-66960834-2');
 </script>
+<!-- Default Statcounter code for Polythèque
+https://poly.zdimension.fr -->
+<script type="text/javascript">
+    var sc_project=12148315;
+    var sc_invisible=1;
+    var sc_security="3d4f3781";
+</script>
+<script type="text/javascript"
+        src="https://www.statcounter.com/counter/counter.js"
+        async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+                                      href="https://statcounter.com/" target="_blank"><img
+                    class="statcounter"
+                    src="https://c.statcounter.com/12148315/0/3d4f3781/1/"
+                    alt="Web Analytics"></a></div></noscript>
+<!-- End of Statcounter Code -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
