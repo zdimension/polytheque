@@ -14,6 +14,7 @@ class Utilisateur extends Authenticatable implements MustVerifyEmail
     const UPDATED_AT = 'date_modification';
 
     const ADMIN = 0;
+    const AUTEUR = 8;
     const NORMAL = 10;
 
     use Notifiable;

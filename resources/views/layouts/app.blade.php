@@ -64,15 +64,20 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
 
                 if (auth()->check())
                 {
-                    if (auth()->user()->est(App\Utilisateur::ADMIN))
-                    {
-                        //$liens["genres.list"] = ["Gestion des genres", "th"];
-                    }
-
                     if (auth()->user()->est(App\Utilisateur::NORMAL))
                     {
                         $liens["cursus.list"] = ["Cursus", "graduation-cap"];
                         $liens["edt.index"] = ["Emploi du temps", "calendar-day"];
+                    }
+
+                    if (auth()->user()->est(\App\Utilisateur::AUTEUR))
+                    {
+                        $liens["article.create"] = ["Créer un article", "pen"];
+                    }
+
+                    if (auth()->user()->est(App\Utilisateur::ADMIN))
+                    {
+                        //$liens["genres.list"] = ["Gestion des genres", "th"];
                     }
                 };
 

@@ -36,6 +36,15 @@ Route::group(['middleware' => 'auth'], function ()
 
     Route::group(['middleware' => 'verified'], function()
     {
+        Route::prefix("/article")->name("article.")->group(function() {
+            Route::get("/creer", "ArticleController@creer")->name("create");
+            Route::put("/creer", "ArticleController@creerEnvoyer")->name("createSubmit");
+
+            Route::get("/{art}/modifier", "ArticleController@modifier")->name("edit");
+            Route::put("/{art}/modifier", "ArticleController@envoyer")->name("submit");
+            Route::get("/{art}/supprimer", "ArticleController@supprimer")->name("delete");
+        });
+
         Route::prefix("/cursus")->name("cursus.")->group(function ()
         {
             Route::get('/', 'CursusController@index')->name("list");
