@@ -2,6 +2,13 @@
 
 use Illuminate\Support\Str;
 
+function exec_cmd($cmd)
+{
+    $out = [];
+    exec($cmd, $out);
+    return implode("\n", $out);
+}
+
 function deci($x, $n=2)
 {
     return number_format($x, $n, ",", ".");
@@ -56,4 +63,14 @@ function prettyPrintXML(SimpleXMLElement $elem)
 function lighten(string $str)
 {
     return preg_replace('/[^a-z0-9]/', '', Str::slug($str));
+}
+
+function isGit()
+{
+    return file_exists(base_path() . '/.git');
+}
+
+function getCurrentCommit()
+{
+    return exec_cmd("git rev-parse HEAD");
 }

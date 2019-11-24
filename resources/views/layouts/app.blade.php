@@ -131,7 +131,7 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
     <footer class="footer">
         <div class="container text-center">
             <span class="text-muted">Copyright © <a href="https://zdimension.fr">zdimension</a> – <a
-                        href="{{route("legal")}}">CGU</a></span>
+                        href="{{route("legal")}}">CGU</a> @if(isGit()) – <a href="http://github.com/zdimension/polytheque/commit/{{getCurrentCommit()}}">{{substr(getCurrentCommit(), 0, 8)}}</a> @endif</span>
         </div>
     </footer>
 </div>
