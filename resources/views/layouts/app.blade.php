@@ -40,6 +40,7 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
           integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     @stack("head")
 </head>
 <body>
@@ -140,8 +141,9 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
                 <a href="{{route("legal")}}">CGU</a><br/>
                 <div style="font-size: 75%;margin-top: 3px;">
                 @if(isGit())
-                    <a href="http://github.com/zdimension/polytheque/commit/{{getCurrentCommit()}}">{{substr(getCurrentCommit(), 0, 8)}}</a> –
-                @endif
+                        <a href="http://github.com/zdimension/polytheque/commit/{{getCurrentCommit()}}">{{substr(getCurrentCommit(), 0, 8)}}</a>
+                        –
+                    @endif
                 page générée en {{ deci(microtime(true) - LARAVEL_START, 4) }} secondes
                 </div>
             </span>
@@ -166,23 +168,37 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
 <!-- Default Statcounter code for Polythèque
 https://poly.zdimension.fr -->
 <script type="text/javascript">
-    var sc_project=12148315;
-    var sc_invisible=1;
-    var sc_security="3d4f3781";
+    var sc_project = 12148315;
+    var sc_invisible = 1;
+    var sc_security = "3d4f3781";
 </script>
 <script type="text/javascript"
         src="https://www.statcounter.com/counter/counter.js"
         async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-                                      href="https://statcounter.com/" target="_blank"><img
+<noscript>
+    <div class="statcounter"><a title="Web Analytics"
+                                href="https://statcounter.com/" target="_blank"><img
                     class="statcounter"
                     src="https://c.statcounter.com/12148315/0/3d4f3781/1/"
-                    alt="Web Analytics"></a></div></noscript>
+                    alt="Web Analytics"></a></div>
+</noscript>
 <!-- End of Statcounter Code -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" integrity="sha256-nlrDrBTHxJJlDDX22AS33xYI1OJHnGMDhiYMSe2U0e0=" crossorigin="anonymous">
+    MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
 <script src="{{ asset("js/app.js") }}"></script>
 @stack("foot")
 </body>
