@@ -1,8 +1,11 @@
 <?php use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\View;
 ?>
+
+@section("fullTitle", config('app.name', 'Polythèque') . (View::hasSection("title") ? (" – " . View::getSection("title")) : ""))
+        
         <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -13,29 +16,23 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- balises meta -->
     <meta name="author" content="zdimension"/>
     <meta name="copyright" content="zdimension"/>
 
     <meta property="og:locale" content="fr_FR"/>
-    <meta property="og:title" content="Polythèque">
+    <meta property="og:title" content="@yield("fullTitle")">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{url("")}}">
     <meta property="og:image" content="{{asset("resources/assets/logo_square.png")}}">
     <meta property="og:site_name" content="Polythèque">
-    <meta property="og:description" content="Polythèque">
+    <meta property="og:description" content="@yield("fullTitle")">
 
     <meta name="twitter:description" content="Polythèque">
-    <meta name="twitter:title" content="Polythèque">
-    <meta name="twitter:text:title" content="Polythèque">
+    <meta name="twitter:title" content="@yield("fullTitle")">
     <meta name="twitter:creator" content="@zdimension_"/>
+    <meta name="twitter:card" content="summary"/>
 
-    <title>
-        {{ config('app.name', 'Polythèque') }}
-    @hasSection("title")
-        – @yield("title")
-    @endif
-    </title>
+    <title>@yield("fullTitle")</title>
 
     <link rel="icon" type="image/png" href="{{asset("resources/assets/logo_square.png")}}"/>
 
