@@ -30,7 +30,12 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
     <meta name="twitter:text:title" content="Polythèque">
     <meta name="twitter:creator" content="@zdimension_"/>
 
-    <title>{{ config('app.name', 'Polythèque') }}</title>
+    <title>
+        {{ config('app.name', 'Polythèque') }}
+    @hasSection("title")
+        – @yield("title")
+    @endif
+    </title>
 
     <link rel="icon" type="image/png" href="{{asset("resources/assets/logo_square.png")}}"/>
 

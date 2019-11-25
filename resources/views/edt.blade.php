@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section("title", "Emploi du temps")
+
 @push("head")
     <style>
         #searchLoading {

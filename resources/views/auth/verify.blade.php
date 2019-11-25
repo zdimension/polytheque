@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section("title", "Vérifier votre adresse e-mail")
+
 @section('content')
     <div class="w-100">
         <div class="card mx-auto text-center" style="width: 450px">

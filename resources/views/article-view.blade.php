@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section("title", $art->titre)
+
 @section('content')
     <div class='card bg-light w-100'>
         <div class="card-header card-hf-divided">

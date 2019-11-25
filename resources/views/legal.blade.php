@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section("title", "Règles")
+
 @push('head')
     <style>
         .rules li:not(:last-child) {

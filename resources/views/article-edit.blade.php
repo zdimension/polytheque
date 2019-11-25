@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section("title", "Modification d'article")
+
 @push("foot")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js"
             integrity="sha256-CVkji/u32aj2TeC+D13f7scFSIfphw2pmu4LaKWMSY8=" crossorigin="anonymous"></script>
