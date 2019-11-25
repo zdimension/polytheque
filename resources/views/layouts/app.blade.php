@@ -139,7 +139,7 @@ use Illuminate\Support\Facades\View;
     <footer class="footer">
         <div class="container text-center">
             <span class="text-muted" style="line-height: normal">
-                Copyright © <a href="https://zdimension.fr">zdimension</a> –
+                Copyright © <a href="https://zdimension.fr">Tom Niget</a> –
                 <a href="{{route("legal")}}">CGU</a><br/>
                 <span style="font-size: 75%;margin-top: 3px;display: block;">
                 @if(isGit())
