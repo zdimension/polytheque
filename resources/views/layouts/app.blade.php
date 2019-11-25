@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View;
 ?>
 
-@section("fullTitle", config('app.name', 'Polythèque') . (View::hasSection("title") ? (" – " . View::getSection("title")) : ""))
+@section("fullTitle", config('app.name', 'Polythèque') . (View::hasSection("title") ? (" – " . htmlspecialchars_decode(View::getSection("title"), ENT_QUOTES | ENT_HTML5)) : ""))
         
         <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
