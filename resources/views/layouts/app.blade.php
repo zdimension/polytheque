@@ -1,4 +1,4 @@
-<?php use Illuminate\Support\Facades\Route;
+<?php use App\Utilisateur;use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;use Illuminate\Support\Str;
 use Illuminate\Support\Facades\View;
@@ -53,7 +53,7 @@ use Illuminate\Support\Facades\View;
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{{ route("root") }}">
-            <img src="{{asset("resources/assets/logo_white.svg")}}" id="nav-logo" height="40"/>
+            <img src="{{asset("resources/assets/logo_white.svg")}}" id="nav-logo" height="40" alt="Logo"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,18 +69,18 @@ use Illuminate\Support\Facades\View;
 
                 if (auth()->check())
                 {
-                    if (auth()->user()->est(App\Utilisateur::NORMAL))
+                    if (auth()->user()->est(Utilisateur::NORMAL))
                     {
                         $liens["cursus.list"] = ["Cursus", "graduation-cap"];
                         $liens["edt.index"] = ["Emploi du temps", "calendar-day"];
                     }
 
-                    if (auth()->user()->est(\App\Utilisateur::AUTEUR))
+                    if (auth()->user()->est(Utilisateur::AUTEUR))
                     {
                         $liens["article.create"] = ["Créer un article", "pen"];
                     }
 
-                    if (auth()->user()->est(App\Utilisateur::ADMIN))
+                    if (auth()->user()->est(Utilisateur::ADMIN))
                     {
                         //$liens["genres.list"] = ["Gestion des genres", "th"];
                     }
@@ -106,9 +106,7 @@ use Illuminate\Support\Facades\View;
                     display_link($url, $n, $icon);
                 ?>
             </ul>
-            <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <!-- Authentication Links -->
                 @guest
                     <?php
                     display_link("login", "Connexion", "sign-in-alt", "?redirect=" . url()->current());
@@ -143,13 +141,13 @@ use Illuminate\Support\Facades\View;
             <span class="text-muted" style="line-height: normal">
                 Copyright © <a href="https://zdimension.fr">zdimension</a> –
                 <a href="{{route("legal")}}">CGU</a><br/>
-                <div style="font-size: 75%;margin-top: 3px;">
+                <span style="font-size: 75%;margin-top: 3px;display: block;">
                 @if(isGit())
                         <a href="http://github.com/zdimension/polytheque/commit/{{getCurrentCommit()}}">{{substr(getCurrentCommit(), 0, 8)}}</a>
                         –
                     @endif
                 page générée en {{ deci(microtime(true) - LARAVEL_START, 4) }} secondes
-                </div>
+                </span>
             </span>
         </div>
     </footer>
