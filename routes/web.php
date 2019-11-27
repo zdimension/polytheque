@@ -34,8 +34,8 @@ Route::group(['middleware' => 'auth'], function ()
         Route::patch('/', 'UtilisateurController@modifierProfil')->name("edit");
     });
 
-    Route::group(['middleware' => 'verified'], function()
-    {
+//    Route::group(['middleware' => 'verified'], function()
+//    {
         Route::prefix("/article")->name("article.")->group(function() {
             Route::get("/creer", "ArticleController@creer")->name("create");
             Route::put("/creer", "ArticleController@creerEnvoyer")->name("createSubmit");
@@ -59,5 +59,5 @@ Route::group(['middleware' => 'auth'], function ()
             Route::get('/', 'EDTController@index')->name("index");
             Route::get('/recherche/{query}', 'EDTController@search')->name("search");
         });
-    });
+//    });
 });
