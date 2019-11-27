@@ -37,6 +37,12 @@
                     part.
                 </li>
                 <li>
+                    Ce site n'est pas affilié de quelque façon que ce soit à Polytech Annecy-Chambéry, au réseau Polytech ou à toute entité dépendante.
+                </li>
+                <li>
+                    <i>cf</i> règle 12
+                </li>
+                <li>
                     L'utilisation des identifiants de connexion d'autrui est formellement interdite, et peut entraîner
                     la suppression définitive de la personne ayant effectué l'intrusion.
                 </li>
@@ -77,6 +83,9 @@
                             href="{{asset("resources/utile/71105397_529672570938360_8217138362784415744_n.jpg")}}">strictement
                         inférieur</a> aux nombre de signatures
                     sur la feuille d'appel.
+                </li>
+                <li>
+                    <i>cf</i> règle 3
                 </li>
                 <li>
                     <a href="https://www.youtube.com/watch?v=l7tURWFLkd0">Aïe aïe aïe.</a>
