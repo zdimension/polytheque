@@ -27,7 +27,7 @@
                 @endif
             @endauth
         </div>
-        <div class="card-body">
+        <div class="card-body markdown">
             {!!markdown($art->contenu)!!}
         </div>
     </div>

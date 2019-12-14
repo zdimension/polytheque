@@ -82,7 +82,7 @@
                     </div>
                     <div class="col w-50 pl-1">
                         <div class="border" style="height: 450px; overflow: scroll;">
-                            <div id="preview"></div>
+                            <div id="preview" class="markdown"></div>
                         </div>
                     </div>
                 </div>

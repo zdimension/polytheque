@@ -77,3 +77,47 @@
 .footer a:hover {
     text-decoration: underline;
 }
+
+.custom-file-input ~ .custom-file-label::after {
+    padding-top: 0.35em;
+    content: "\f07c" !important;
+    display: inline-block;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.custom-file-label {
+    display: flex;
+}
+
+.custom-file-label > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: calc(100% - 40px);
+}
+
+.markdown table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+}
+
+.markdown table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+}
+
+.markdown table td, .markdown table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+.markdown table th {
+    font-weight: 600;
+    text-align: center;
+}
