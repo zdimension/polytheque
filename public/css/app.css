@@ -121,3 +121,8 @@
     font-weight: 600;
     text-align: center;
 }
+
+.markdown table {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
