@@ -24,7 +24,9 @@
                 inp.val(editor.getSession().getValue());
             }
 
-            editor.getSession().setValue({!! @json_encode($art->contenu) ?? "" !!} || "");
+            editor.getSession().setValue({!! @json_encode($art->contenu) ?? "" !!} || ""
+        )
+            ;
 
             refreshField();
 
@@ -66,12 +68,36 @@
                 {{ csrf_field() }}
                 {{ method_field("PUT") }}
 
-                <div class="form-group">
-                    <input id="titre" type="text"
-                           class="form-control"
-                           name="titre"
-                           placeholder="Titre"
-                           value="{{ @$art->titre }}" required>
+                <div class="form-group row">
+                    <label for="titre" class=" col-auto col-form-label">Titre</label>
+                    <div class="col-auto flex-grow-1">
+                        <input id="titre" type="text"
+                               class="form-control"
+                               name="titre"
+                               placeholder="Titre"
+                               value="{{ @$art->titre }}" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="alias" class="col-auto col-form-label">Alias</label>
+                    <div class="col-auto flex-grow-1">
+                        <input id="alias" type="text"
+                               class="form-control"
+                               name="alias"
+                               placeholder="Alias"
+                               value="{{ @$art->alias }}" pattern="[A-Za-z0-9\-\/]+">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="invisible" class="col-auto col-form-label">Invisible</label>
+                    <div class="col-auto flex-grow-1">
+                        <input id="invisible" type="checkbox"
+                               class="form-check-input"
+                               name="invisible"
+                               @if(@$art->invisible) checked @endif>
+                    </div>
                 </div>
 
                 <input type="hidden" id="contenu" name="contenu"/>

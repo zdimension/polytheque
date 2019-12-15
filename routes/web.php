@@ -26,6 +26,11 @@ Route::prefix("/article")->name("article.")->group(function()
     Route::get("/{art}", "ArticleController@voir")->where("art", "[0-9]+")->name("view");
 });
 
+Route::prefix("/fichier")->name("fichier.")->group(function ()
+{
+    Route::get("/{f}", "FichierController@voir")->where("f", "[0-9]+")->name("view");
+});
+
 Route::group(['middleware' => 'auth'], function ()
 {
     Route::prefix("/compte")->name("compte.")->group(function ()
@@ -59,5 +64,14 @@ Route::group(['middleware' => 'auth'], function ()
             Route::get('/', 'EDTController@index')->name("index");
             Route::get('/recherche/{query}', 'EDTController@search')->name("search");
         });
+
+        Route::prefix("/fichier")->name("fichier.")->group(function ()
+        {
+            Route::get('/', 'FichierController@index')->name("list");
+            Route::put('/ajouter', 'FichierController@ajouter')->name("add");
+            Route::get('/{f}/supprimer', 'FichierController@supprimer')->name("delete");
+        });
 //    });
 });
+
+Route::get("{alias}", 'ArticleController@articleAlias')->where('alias', '([A-Za-z0-9\-\/]+)');

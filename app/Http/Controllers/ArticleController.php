@@ -33,6 +33,8 @@ class ArticleController extends Controller
     {
         $art->titre = request("titre");
         $art->contenu = request("contenu");
+        $art->alias = request("alias");
+        $art->invisible = request("invisible") || 0;
         $art->save();
 
         return redirect(route("article.view", ["art" => $art]));
@@ -50,5 +52,10 @@ class ArticleController extends Controller
         if (!request()->has("text")) abort(404);
 
         return markdown(request("text"));
+    }
+
+    public function articleAlias($alias)
+    {
+        return $this->voir(Article::where("alias", $alias)->firstOrFail());
     }
 }
