@@ -143,7 +143,7 @@ use Illuminate\Support\Facades\View;
         <div class="container text-center">
             <span class="text-muted" style="line-height: normal">
                 Copyright © <a href="https://zdimension.fr">Tom Niget</a> –
-                <a href="{{route("legal")}}">CGU</a><br/>
+                <a href="{{route("alias", ["alias" => "legal"])}}">CGU</a><br/>
                 <span style="font-size: 75%;margin-top: 3px;display: block;">
                 @if(isGit())
                         <a href="http://github.com/zdimension/polytheque/commit/{{getCurrentCommit()}}">{{substr(getCurrentCommit(), 0, 8)}}</a>

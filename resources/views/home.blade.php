@@ -5,7 +5,7 @@
 @section('content')
     <h2 class="mb-3">Accueil</h2>
 
-    <h6>Pas grand chose à voir ici pour l'instant. Lisez bien les <a href="{{route("legal")}}">CGU</a></h6>
+    <h6>Pas grand chose à voir ici pour l'instant. Lisez bien les <a href="{{route("alias", ["alias" => "legal"])}}">CGU</a></h6>
 
     <hr>
     <h4 class="mb-3">Derniers articles</h4>

@@ -70,4 +70,4 @@ Route::group(['middleware' => 'auth'], function ()
 //    });
 });
 
-Route::get("{alias}", 'ArticleController@articleAlias')->where('alias', '([A-Za-z0-9\-\/]+)');
+Route::get("{alias}", 'ArticleController@articleAlias')->where('alias', '([A-Za-z0-9\-\/]+)')->name("alias");
