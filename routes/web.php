@@ -17,10 +17,6 @@ include_once("auth.php");
 
 Route::get('/', "HomeController@index")->name("root");
 
-Route::get('/legal', function() {
-    return view("legal");
-})->name("legal");
-
 Route::prefix("/article")->name("article.")->group(function()
 {
     Route::get("/{art}", "ArticleController@voir")->where("art", "[0-9]+")->name("view");
