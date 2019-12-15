@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\View;
 
     <meta property="og:locale" content="fr_FR"/>
     <meta property="og:title" content="@yield("fullTitle")">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{url("")}}">
+    <meta property="og:type" content="@yield("ogType", "website")">
+    <meta property="og:url" content="{{url()->current()}}">
     <meta property="og:image" content="{{asset("resources/assets/logo_square.png")}}">
     <meta property="og:site_name" content="Polythèque">
     <meta property="og:description" content="@yield("fullTitle")">

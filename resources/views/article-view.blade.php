@@ -1,3 +1,5 @@
+@section("ogType", "article")
+
 @extends('layouts.app')
 
 @section("title", $art->titre)
