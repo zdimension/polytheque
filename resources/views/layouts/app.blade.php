@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\View;
     <meta property="og:title" content="@yield("fullTitle")">
     <meta property="og:type" content="@yield("ogType", "website")">
     <meta property="og:url" content="{{url()->current()}}">
-    <meta property="og:image" content="{{asset("resources/assets/logo_square.png")}}">
+    <meta property="og:image" content="{{asset("images/logo_square.png")}}">
     <meta property="og:site_name" content="Polythèque">
     <meta property="og:description" content="@yield("fullTitle")">
 
@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\View;
 
     <title>@yield("fullTitle")</title>
 
-    <link rel="icon" type="image/png" href="{{asset("resources/assets/logo_square.png")}}">
+    <link rel="icon" type="image/png" href="{{asset("images/logo_square.png")}}">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
@@ -56,7 +56,7 @@ use Illuminate\Support\Facades\View;
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{{ route("root") }}">
-            <img src="{{asset("resources/assets/logo_white.svg")}}" id="nav-logo" height="40" alt="Logo"/>
+            <img src="{{asset("images/logo_white.svg")}}" id="nav-logo" height="40" alt="Logo"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
