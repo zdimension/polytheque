@@ -11,15 +11,18 @@ use Illuminate\Support\Facades\View;
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="fr-FR">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="author" content="zdimension"/>
-    <meta name="copyright" content="zdimension"/>
+    <meta name="robots" content="all">
 
-    <meta property="og:locale" content="fr_FR"/>
+    <meta name="author" content="zdimension">
+    <meta name="copyright" content="zdimension">
+
+    <meta property="og:locale" content="fr_FR">
     <meta property="og:title" content="@yield("fullTitle")">
     <meta property="og:type" content="@yield("ogType", "website")">
     <meta property="og:url" content="{{url()->current()}}">
@@ -29,12 +32,12 @@ use Illuminate\Support\Facades\View;
 
     <meta name="twitter:description" content="Polythèque">
     <meta name="twitter:title" content="@yield("fullTitle")">
-    <meta name="twitter:creator" content="@zdimension_"/>
-    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:creator" content="@zdimension_">
+    <meta name="twitter:card" content="summary">
 
     <title>@yield("fullTitle")</title>
 
-    <link rel="icon" type="image/png" href="{{asset("resources/assets/logo_square.png")}}"/>
+    <link rel="icon" type="image/png" href="{{asset("resources/assets/logo_square.png")}}">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
