@@ -135,7 +135,7 @@ use Illuminate\Support\Facades\View;
             </ul>
         </div>
     </nav>
-    <div class="container-fluid" style="padding-top: 20px; padding-bottom: 15px">
+    <div class="container-fluid" style="padding-top: 20px; padding-bottom: 20px">
         @yield('content')
     </div>
     <div class="footer-spacer"></div>
