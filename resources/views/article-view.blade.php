@@ -22,10 +22,10 @@
                         <a class="btn btn-primary" href="{{route("article.edit", ["art" => $art])}}"><i
                                     class="fa fa-pen mr-1" aria-hidden="true"></i> Modifier</a>
                     </div>
-                    <div class="card-hf-column">
+                    <!--<div class="card-hf-column">
                         <a class="btn btn-danger" style="transform: scale(0.3)" href="{{route("article.delete", ["art" => $art])}}"><i
                                     class="fa fa-trash mr-1" aria-hidden="true"></i> Supprimer</a>
-                    </div>
+                    </div>-->
                 @endif
             @endauth
         </div>
