@@ -48,14 +48,14 @@
             height: 100vh;
         }
 
-        #nav-sidebar > ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
         #nav-sidebar ul {
             list-style-type: circle;
             padding-left: 25px;
+        }
+
+        #nav-sidebar > ul {
+            list-style-type: none;
+            padding-left: 0;
         }
 
         #nav-sidebar a {
