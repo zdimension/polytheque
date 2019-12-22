@@ -141,15 +141,15 @@
                 $(window).scroll(function() {
                     let found = false;
 
-                    for(let li of list.children) {
+                    list.children().each(function() {
                         if (!found && $("#" + li.data("heading")).offset().top - $(window).scrollTop() > 0) {
                             found = true;
-                            li.addClass("active");
+                            $(this).addClass("active");
                         }
                         else {
-                            li.removeClass("active");
+                            $(this).removeClass("active");
                         }
-                    }
+                    });
                 });
 
                 $(window).scroll();
