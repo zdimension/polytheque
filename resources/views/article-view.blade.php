@@ -45,7 +45,7 @@
         #nav-sidebar {
             position: sticky;
             top: 1rem;
-            height: 100vh;
+            height: fit-content;
         }
 
         #nav-sidebar ul {
