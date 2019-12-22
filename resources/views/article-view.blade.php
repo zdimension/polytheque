@@ -41,6 +41,12 @@
         #back-top:hover {
             background: rgba(0, 0, 0, 0.9);
         }
+
+        #nav-sidebar {
+            position: sticky;
+            top: 1rem;
+            height: 100vh;
+        }
     </style>
 @endpush
 
@@ -92,8 +98,15 @@
                 @endif
             @endauth
         </div>
-        <div class="card-body markdown">
-            {!!markdown($art->contenu)!!}
+        <div class="card-body markdown row">
+            <div class="col">
+                {!!markdown($art->contenu)!!}
+            </div>
+            @if ($art->sidebar)
+                <div class="col border-left" id="nav-sidebar">
+                    abc
+                </div>
+            @endif
         </div>
     </div>
 
