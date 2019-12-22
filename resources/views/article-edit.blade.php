@@ -9,6 +9,8 @@
             integrity="sha256-+LuWQyoA65gA+u1R8aXl/CeNMelII6+kEngEgjYECfI=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/mode-markdown.js"
             integrity="sha256-y7CQ+vmcCTzRcZRodqknIaPkRg2nFIS91PMCbjofpAI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.7/mode-javascript.js"
+            integrity="sha256-9nVHCZW1SuyhaVgqmPk1XutGn+g/ASVBiVAheioldo4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/theme-monokai.js"
             integrity="sha256-Fc4eJOe8KtF8kDLqSR94vUiJ1ohvKDxznSMxI3RavOw=" crossorigin="anonymous"></script>
     <script>
@@ -18,17 +20,24 @@
             editor.session.setMode("ace/mode/markdown");
 
             let inp = $('#contenu');
+            let inp_js = $('#script');
             editor.getSession().on("change", refreshField);
 
-            function refreshField() {
+            let editor_js = ace.edit("editor-script");
+            editor_js.setTheme("ace/theme/monokai");
+            editor_js.session.setMode("ace/mode/javascript");
+            editor_js.getSession().on("change", refreshFields);
+
+            function refreshFields() {
                 inp.val(editor.getSession().getValue());
+                inp_js.val(editor_js.getSession().getValue());
             }
 
             editor.getSession().setValue({!! @json_encode($art->contenu) ?? "" !!} || ""
         )
             ;
 
-            refreshField();
+            refreshFields();
 
             let last = null;
             let preview = $("#preview");
@@ -113,6 +122,7 @@
                 </div>
 
                 <input type="hidden" id="contenu" name="contenu"/>
+                <input type="hidden" id="script" name="script"/>
 
                 <div class="row mb-3">
                     <div class="col w-50 pr-1">
@@ -123,6 +133,9 @@
                             <div id="preview" class="markdown"></div>
                         </div>
                     </div>
+                </div>
+                <div class="mb-3">
+                    <div id="editor-script" class="w-100" style="height: 100%; font-size: 14px;"></div>
                 </div>
                 <div class="form-group mb-0">
                     <button type="submit" class="btn btn-primary">

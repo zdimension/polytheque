@@ -33,6 +33,7 @@ class ArticleController extends Controller
     {
         $art->titre = request("titre");
         $art->contenu = request("contenu");
+        $art->script = request("script");
         $art->alias = request("alias");
         $art->invisible = request("invisible") || 0;
         $art->sidebar = request("sidebar") || 0;

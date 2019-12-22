@@ -160,6 +160,14 @@
     @endif
 @endpush
 
+@if ($art->script)
+    @push("foot")
+        <script>
+            {!! $art->script !!}
+        </script>
+    @endpush
+@endif
+
 @section('content')
     <div class='card bg-light w-100'>
         <div class="card-header card-hf-divided">
