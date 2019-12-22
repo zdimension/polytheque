@@ -125,7 +125,7 @@
                     //let match = $(".markdown :header").filter(function() { return $(this).text() === item[1]; });
 
                     //if (match.length === 1)
-                    let match = headings[cur_id];
+                    let match = $(headings[cur_id]);
                     match.attr("id", "nav_" + cur_id++);
                     list.append(
                         $("<li></li>")
