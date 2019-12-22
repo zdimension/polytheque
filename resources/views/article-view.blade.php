@@ -101,6 +101,7 @@
 
                 let depth = 0;
                 let list = $("<ul></ul>");
+                let cur_list = list;
                 let last = -1;
 
                 let cur_id = 0;
@@ -110,13 +111,13 @@
                     if (last !== -1 && item[0] > last)
                     {
                         let n_ul = $("<ul></ul>");
-                        list.append(n_ul);
-                        list = n_ul;
+                        cur_list.append(n_ul);
+                        cur_list = n_ul;
                         depth++;
                     }
                     else if (item[0] < last && depth > 0)
                     {
-                        list = list.parent();
+                        cur_list = cur_list.parent();
                         depth--;
                     }
 
@@ -127,7 +128,7 @@
                     //if (match.length === 1)
                     let match = $(headings[cur_id]);
                     match.attr("id", "nav_" + cur_id++);
-                    list.append(
+                    cur_list.append(
                         $("<li></li>")
                             .data("heading", match)
                             .append(
