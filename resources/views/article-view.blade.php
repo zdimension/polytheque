@@ -98,13 +98,13 @@
                 @endif
             @endauth
         </div>
-        <div class="card-body markdown row">
-            <div class="col">
+        <div class="card-body markdown row flex-nowrap">
+            <div class="col" style="width: 0">
                 {!!markdown($art->contenu)!!}
             </div>
             @if ($art->sidebar)
-                <div class="col border-left" id="nav-sidebar">
-                    abc
+                <div class="col-auto border-left" id="nav-sidebar">
+                    <h4>Navigation</h4>
                 </div>
             @endif
         </div>
