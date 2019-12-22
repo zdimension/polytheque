@@ -4,6 +4,60 @@
 
 @section("title", $art->titre)
 
+@push("head")
+    <style>
+        #back-top {
+            position: fixed;
+            bottom: calc(var(--footer-height) + 20px);
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            width: 50px;
+            height: 50px;
+            display: block;
+            text-decoration: none;
+            border-radius: 35px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        #back-top i {
+            color: #fff;
+            margin: 0;
+            position: relative;
+            left: 25px;
+            top: 25px;
+            transform: translate(-50%, -60%);
+            font-size: 19px;
+            transition: all 0.3s ease;
+        }
+
+        #back-top:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+@endpush
+
+@push("foot")
+    <script>
+        $(document).ready(function() {
+            let backtop = $("#back-top");
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 300) {
+                    backtop.fadeIn(200);
+                } else {
+                    backtop.fadeOut(200);
+                }
+            });
+
+            backtop.click(function() {
+                e.preventDefault();
+                $('html, body').animate({scrollTop: 0}, 300);
+            });
+        });
+    </script>
+@endpush
+
 @section('content')
     <div class='card bg-light w-100'>
         <div class="card-header card-hf-divided">
@@ -33,4 +87,6 @@
             {!!markdown($art->contenu)!!}
         </div>
     </div>
+
+    <a href="#" id="back-top"><i class="fa fa-chevron-up"></i></a>
 @endsection
