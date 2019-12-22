@@ -92,7 +92,7 @@
 
                 <div class="form-group row">
                     <label for="invisible" class="col-sm-2 col-form-label">Invisible</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10 d-flex align-items-center">
                         <div class="custom-control custom-checkbox">
                             <input class="custom-control-input" type="checkbox"
                                    name="invisible" id="invisible" @if(@$art->invisible) checked @endif>
@@ -103,7 +103,7 @@
 
                 <div class="form-group row">
                     <label for="sidebar" class="col-sm-2 col-form-label">Sidebar</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10 d-flex align-items-center">
                         <div class="custom-control custom-checkbox">
                             <input class="custom-control-input" type="checkbox"
                                    name="sidebar" id="sidebar" @if(@$art->sidebar) checked @endif>
