@@ -94,9 +94,6 @@
     @if ($art->sidebar)
         <script>
             $(document).ready(function() {
-                let nav = JSON.parse($("#nav-data").html());
-                let headings = $(".markdown :header");
-
                 let c = $("#nav-sidebar");
 
                 let depth = 0;
@@ -104,42 +101,39 @@
                 let cur_list = list;
                 let last = -1;
 
-                let cur_id = 0;
+                $(".markdown :header").each(function(i) {
+                    let num = $(this).prop("tagName")[1];
 
-                for (let item of nav)
-                {
-                    if (last !== -1 && item[0] > last)
+                    if (last !== -1 && num > last)
                     {
                         let n_ul = $("<ul></ul>");
                         cur_list.append(n_ul);
                         cur_list = n_ul;
                         depth++;
                     }
-                    else if (item[0] < last && depth > 0)
+                    else if (num < last && depth > 0)
                     {
                         cur_list = cur_list.parent();
                         depth--;
                     }
 
-                    last = item[0];
+                    last = num;
 
-                    //let match = $(".markdown :header").filter(function() { return $(this).text() === item[1]; });
-
-                    //if (match.length === 1)
-                    let match = $(headings[cur_id]);
-                    match.attr("id", "nav_" + cur_id++);
+                    let id =  "nav_" + i;
+                    $(this).attr("id", id);
                     cur_list.append(
                         $("<li></li>")
-                            .data("heading", match)
+                            .data("heading", $(this))
                             .append(
                                 $("<a></a>")
-                                    .html(match.html())
+                                    .html($(this).html())
                                     .click(function() {
-                                        $("html, body").animate({scrollTop: match.offset().top - 15}, 300);
+                                        $("html, body").animate({scrollTop: $(this).offset().top - 15}, 300);
+                                        location.hash = id;
                                     })
                                     .attr("href", "#")));
 
-                }
+                });
 
                 c.append(list);
 
@@ -161,24 +155,6 @@
 
                 $(window).scroll();
             });
-        </script>
-
-        <script type="application/json" id="nav-data">
-            <?php
-            $res = [];
-
-            foreach(explode("\n", $art->contenu) as $line)
-            {
-                preg_match_all("/^(#+) ([^\r]*)(?:\r?)/", $line, $out);
-
-                if ($out[0])
-                {
-                    $res[] = [strlen($out[1][0]), $out[2][0]];
-                }
-            }
-
-            echo json_encode($res);
-            ?>
         </script>
     @endif
 @endpush
