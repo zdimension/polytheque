@@ -142,7 +142,7 @@
                     let found = false;
 
                     list.children().each(function() {
-                        if (!found && $("#" + li.data("heading")).offset().top - $(window).scrollTop() > 0) {
+                        if (!found && $("#" + $(this).data("heading")).offset().top - $(window).scrollTop() > 0) {
                             found = true;
                             $(this).addClass("active");
                         }
