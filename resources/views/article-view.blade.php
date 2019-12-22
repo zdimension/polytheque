@@ -76,6 +76,42 @@
         <script>
             $(document).ready(function() {
                 let nav = JSON.parse($("#nav-data").html());
+
+                let c = $("#nav-sidebar");
+
+                let depth = 0;
+                let list = $("<ul></ul>");
+                let last = -1;
+
+                let cur_id = 0;
+
+                for (let item of nav)
+                {
+                    if (last !== -1 && item[0] > last)
+                    {
+                        let n_ul = $("<ul></ul>");
+                        list.append(n_ul);
+                        list = n_ul;
+                        depth++;
+                    }
+                    else if (item[0] < last && depth > 0)
+                    {
+                        list = list.parent();
+                        depth--;
+                    }
+
+                    last = item[0];
+
+                    let match = $(".markdown :header").filter(function() { return $(this).text() === item[1]; });
+
+                    if (match.length === 1)
+                    {
+                        match.attr("id", "nav_" + cur_id);
+                        list.append($("<li></li>").append($("<a></a>").text(item[1]).attr("href", "#" + match.attr("id"))));
+                    }
+                }
+
+                c.append(list);
             });
         </script>
 
