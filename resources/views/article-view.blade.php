@@ -71,6 +71,32 @@
             });
         });
     </script>
+
+    @if ($art->sidebar)
+        <script>
+            $(document).ready(function() {
+                let nav = JSON.parse($("#nav-data").textContent);
+            });
+        </script>
+
+        <script type="application/json" id="nav-data">
+            <?php
+            $res = [];
+
+            foreach(explode("\n", $art->contenu) as $line)
+            {
+                preg_match_all("/^(#+) (.*)$/", $line, $out);
+
+                if ($out[0])
+                {
+                    $res[] = [strlen($out[1][0]), $out[2][0]];
+                }
+            }
+
+            echo json_encode($res);
+            ?>
+        </script>
+    @endif
 @endpush
 
 @section('content')
