@@ -141,6 +141,8 @@
 
                 c.append(list);
 
+                list.width(Math.max.apply(Math, list.children().map(function(){ return $(this).width(); }).get()) + 15);
+
                 $(window).scroll(function() {
                     let found = false;
 
