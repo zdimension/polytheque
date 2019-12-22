@@ -133,7 +133,7 @@
                                         $("html, body").animate({scrollTop: h.offset().top - 15}, 300);
                                         location.hash = h.attr("id");
                                     })
-                                    .attr("href", "#")));
+                                    .attr("href", "javascript:;")));
                 });
 
                 c.append(list);
