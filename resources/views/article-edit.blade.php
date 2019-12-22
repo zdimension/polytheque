@@ -37,6 +37,10 @@
         )
             ;
 
+            editor_js.getSession().setValue({!! @json_encode($art->script) ?? "" !!} || ""
+        )
+            ;
+
             refreshFields();
 
             let last = null;
