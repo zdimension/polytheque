@@ -119,6 +119,8 @@
 
                     last = num;
 
+                    let h = $(this);
+
                     $(this).attr("id", "nav_" + i);
 
                     cur_list.append(
@@ -128,8 +130,8 @@
                                 $("<a></a>")
                                     .html($(this).html())
                                     .click(function() {
-                                        $("html, body").animate({scrollTop: $(this).offset().top - 15}, 300);
-                                        location.hash = $(this).attr("id");
+                                        $("html, body").animate({scrollTop: h.offset().top - 15}, 300);
+                                        location.hash = h.attr("id");
                                     })
                                     .attr("href", "#")));
                 });
