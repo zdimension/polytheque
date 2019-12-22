@@ -132,7 +132,7 @@
                             .data("heading", match)
                             .append(
                                 $("<a></a>")
-                                    .text(item[1])
+                                    .html(match.html())
                                     .click(function() {
                                         $("html, body").animate({scrollTop: match.offset().top - 15}, 300);
                                     })
