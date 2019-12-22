@@ -69,8 +69,8 @@
                 {{ method_field("PUT") }}
 
                 <div class="form-group row">
-                    <label for="titre" class=" col-auto col-form-label">Titre</label>
-                    <div class="col-auto flex-grow-1">
+                    <label for="titre" class="col-sm-2 col-form-label">Titre</label>
+                    <div class="col-sm-10">
                         <input id="titre" type="text"
                                class="form-control"
                                name="titre"
@@ -80,8 +80,8 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="alias" class="col-auto col-form-label">Alias</label>
-                    <div class="col-auto flex-grow-1">
+                    <label for="alias" class="col-sm-2 col-form-label">Alias</label>
+                    <div class="col-sm-10">
                         <input id="alias" type="text"
                                class="form-control"
                                name="alias"
@@ -91,8 +91,8 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="invisible" class="col-auto col-form-label">Invisible</label>
-                    <div class="col-auto flex-grow-1">
+                    <label for="invisible" class="col-sm-2 col-form-label">Invisible</label>
+                    <div class="col-sm-10">
                         <div class="custom-control custom-checkbox">
                             <input class="custom-control-input" type="checkbox"
                                    name="invisible" id="invisible" @if(@$art->invisible) checked @endif>
@@ -102,8 +102,8 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="sidebar" class="col-auto col-form-label">Sidebar</label>
-                    <div class="col-auto flex-grow-1">
+                    <label for="sidebar" class="col-sm-2 col-form-label">Sidebar</label>
+                    <div class="col-sm-10">
                         <div class="custom-control custom-checkbox">
                             <input class="custom-control-input" type="checkbox"
                                    name="sidebar" id="sidebar" @if(@$art->sidebar) checked @endif>
