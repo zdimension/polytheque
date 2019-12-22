@@ -79,7 +79,7 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group row mb-2">
                     <label for="alias" class="col-sm-2 col-form-label">Alias</label>
                     <div class="col-sm-10">
                         <input id="alias" type="text"
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group row mb-0">
                     <label for="invisible" class="col-sm-2 col-form-label">Invisible</label>
                     <div class="col-sm-10 d-flex align-items-center">
                         <div class="custom-control custom-checkbox">
