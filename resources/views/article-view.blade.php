@@ -57,6 +57,8 @@
                 }
             });
 
+            $(window).scroll();
+
             backtop.click(function() {
                 e.preventDefault();
                 $('html, body').animate({scrollTop: 0}, 300);
