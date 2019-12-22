@@ -62,7 +62,7 @@
             color: black;
         }
 
-        #nav-sidebar a.active {
+        #nav-sidebar li.active > a {
             font-weight: bold;
         }
     </style>
