@@ -132,7 +132,10 @@
                                 .append(
                                     $("<a></a>")
                                         .text(item[1])
-                                        .attr("href", "#" + match.attr("id"))));
+                                        .click(function() {
+                                            $("html, body").animate({scrollTop: match.offset().top - 15}, 300);
+                                        })
+                                        .attr("href", "#")));
                     }
                 }
 
