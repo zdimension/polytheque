@@ -101,7 +101,7 @@
                 let cur_list = list;
                 let last = -1;
 
-                $(".markdown :header").each(function(i) {
+                $("#article-body :header").each(function(i) {
                     let num = $(this).prop("tagName")[1];
 
                     if (last !== -1 && num > last)
@@ -184,7 +184,7 @@
             @endauth
         </div>
         <div class="card-body markdown row flex-nowrap">
-            <div class="col" style="width: 0">
+            <div class="col" style="width: 0" id="article-body">
                 {!!markdown($art->contenu)!!}
             </div>
             @if ($art->sidebar)
