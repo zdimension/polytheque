@@ -1,5 +1,3 @@
-self.Prism.fileHighlight = function() {};
-
 $(document).ready(function () {
     function refresh(file, arg = null) {
         $(file).next('.custom-file-label').children("span").text(arg === null ? (file.files.length > 0 ? file.files[0].name : "") : "");
