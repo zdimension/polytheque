@@ -129,7 +129,7 @@
                                     .html($(this).html())
                                     .click(function() {
                                         $("html, body").animate({scrollTop: $(this).offset().top - 15}, 300);
-                                        location.hash = $(this.attr("id"));
+                                        location.hash = $(this).attr("id");
                                     })
                                     .attr("href", "#")));
                 });
