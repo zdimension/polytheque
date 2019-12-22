@@ -119,8 +119,8 @@
 
                     last = num;
 
-                    let id =  "nav_" + i;
-                    $(this).attr("id", id);
+                    $(this).attr("id", "nav_" + i);
+
                     cur_list.append(
                         $("<li></li>")
                             .data("heading", $(this))
@@ -129,10 +129,9 @@
                                     .html($(this).html())
                                     .click(function() {
                                         $("html, body").animate({scrollTop: $(this).offset().top - 15}, 300);
-                                        location.hash = id;
+                                        location.hash = $(this.attr("id"));
                                     })
                                     .attr("href", "#")));
-
                 });
 
                 c.append(list);
