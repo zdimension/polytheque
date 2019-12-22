@@ -93,10 +93,22 @@
                 <div class="form-group row">
                     <label for="invisible" class="col-auto col-form-label">Invisible</label>
                     <div class="col-auto flex-grow-1">
-                        <input id="invisible" type="checkbox"
-                               class="form-check-input"
-                               name="invisible"
-                               @if(@$art->invisible) checked @endif>
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox"
+                                   name="invisible" id="invisible" @if(@$art->invisible) checked @endif>
+                            <label class="custom-control-label" for="invisible"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="sidebar" class="col-auto col-form-label">Sidebar</label>
+                    <div class="col-auto flex-grow-1">
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox"
+                                   name="sidebar" id="sidebar" @if(@$art->sidebar) checked @endif>
+                            <label class="custom-control-label" for="sidebar"></label>
+                        </div>
                     </div>
                 </div>
 
