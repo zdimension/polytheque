@@ -138,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" style="height: 300px">
                     <div id="editor-script" class="w-100" style="height: 100%; font-size: 14px;"></div>
                 </div>
                 <div class="form-group mb-0">
