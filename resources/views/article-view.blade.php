@@ -47,6 +47,24 @@
             top: 1rem;
             height: 100vh;
         }
+
+        #nav-sidebar > ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #nav-sidebar ul {
+            list-style-type: circle;
+            padding-left: 25px;
+        }
+
+        #nav-sidebar a {
+            color: black;
+        }
+
+        #nav-sidebar a.active {
+            font-weight: bold;
+        }
     </style>
 @endpush
 
@@ -58,7 +76,8 @@
             $(window).scroll(function() {
                 if ($(window).scrollTop() > 300) {
                     backtop.addClass("active");
-                } else {
+                }
+                else {
                     backtop.removeClass("active");
                 }
             });
@@ -106,12 +125,34 @@
 
                     if (match.length === 1)
                     {
-                        match.attr("id", "nav_" + cur_id);
-                        list.append($("<li></li>").append($("<a></a>").text(item[1]).attr("href", "#" + match.attr("id"))));
+                        match.attr("id", "nav_" + cur_id++);
+                        list.append(
+                            $("<li></li>")
+                                .data("heading", match.attr("id"))
+                                .append(
+                                    $("<a></a>")
+                                        .text(item[1])
+                                        .attr("href", "#" + match.attr("id"))));
                     }
                 }
 
                 c.append(list);
+
+                $(window).scroll(function() {
+                    let found = false;
+
+                    for(let li of list.children) {
+                        if (!found && $("#" + li.data("heading")).offset().top - $(window).scrollTop() > 0) {
+                            found = true;
+                            li.addClass("active");
+                        }
+                        else {
+                            li.removeClass("active");
+                        }
+                    }
+                });
+
+                $(window).scroll();
             });
         </script>
 
