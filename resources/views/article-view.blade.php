@@ -128,7 +128,7 @@
                         match.attr("id", "nav_" + cur_id++);
                         list.append(
                             $("<li></li>")
-                                .data("heading", match.attr("id"))
+                                .data("heading", match)
                                 .append(
                                     $("<a></a>")
                                         .text(item[1])
@@ -145,7 +145,7 @@
                     let found = false;
 
                     list.find("li").each(function() {
-                        if (!found && $("#" + $(this).data("heading")).offset().top - $(window).scrollTop() > 0) {
+                        if (!found && $(this).data("heading").offset().top - $(window).scrollTop() > 0) {
                             found = true;
                             $(this).addClass("active");
                         }
