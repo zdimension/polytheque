@@ -75,7 +75,7 @@
     @if ($art->sidebar)
         <script>
             $(document).ready(function() {
-                let nav = JSON.parse($("#nav-data").textContent);
+                let nav = JSON.parse($("#nav-data").html());
             });
         </script>
 
@@ -85,7 +85,7 @@
 
             foreach(explode("\n", $art->contenu) as $line)
             {
-                preg_match_all("/^(#+) (.*)$/", $line, $out);
+                preg_match_all("/^(#+) ([^\r]*)(?:\r?)/", $line, $out);
 
                 if ($out[0])
                 {
