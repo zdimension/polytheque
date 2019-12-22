@@ -95,6 +95,7 @@
         <script>
             $(document).ready(function() {
                 let nav = JSON.parse($("#nav-data").html());
+                let headings = $(".markdown :header");
 
                 let c = $("#nav-sidebar");
 
@@ -121,22 +122,22 @@
 
                     last = item[0];
 
-                    let match = $(".markdown :header").filter(function() { return $(this).text() === item[1]; });
+                    //let match = $(".markdown :header").filter(function() { return $(this).text() === item[1]; });
 
-                    if (match.length === 1)
-                    {
-                        match.attr("id", "nav_" + cur_id++);
-                        list.append(
-                            $("<li></li>")
-                                .data("heading", match)
-                                .append(
-                                    $("<a></a>")
-                                        .text(item[1])
-                                        .click(function() {
-                                            $("html, body").animate({scrollTop: match.offset().top - 15}, 300);
-                                        })
-                                        .attr("href", "#")));
-                    }
+                    //if (match.length === 1)
+                    let match = headings[cur_id];
+                    match.attr("id", "nav_" + cur_id++);
+                    list.append(
+                        $("<li></li>")
+                            .data("heading", match)
+                            .append(
+                                $("<a></a>")
+                                    .text(item[1])
+                                    .click(function() {
+                                        $("html, body").animate({scrollTop: match.offset().top - 15}, 300);
+                                    })
+                                    .attr("href", "#")));
+
                 }
 
                 c.append(list);
