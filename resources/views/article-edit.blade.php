@@ -21,7 +21,7 @@
 
             let inp = $('#contenu');
             let inp_js = $('#script');
-            editor.getSession().on("change", refreshField);
+            editor.getSession().on("change", refreshFields);
 
             let editor_js = ace.edit("editor-script");
             editor_js.setTheme("ace/theme/monokai");
