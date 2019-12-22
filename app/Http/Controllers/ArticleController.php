@@ -35,6 +35,7 @@ class ArticleController extends Controller
         $art->contenu = request("contenu");
         $art->alias = request("alias");
         $art->invisible = request("invisible") || 0;
+        $art->sidebar = request("sidebar") || 0;
         $art->save();
 
         return redirect(route("article.view", ["art" => $art]));
