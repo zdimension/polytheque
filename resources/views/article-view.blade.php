@@ -141,7 +141,7 @@
                 $(window).scroll(function() {
                     let found = false;
 
-                    list.children().each(function() {
+                    list.find("li").each(function() {
                         if (!found && $("#" + $(this).data("heading")).offset().top - $(window).scrollTop() > 0) {
                             found = true;
                             $(this).addClass("active");
