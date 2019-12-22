@@ -18,6 +18,13 @@
             border-radius: 35px;
             transition: all 0.3s ease;
             z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #back-top.active {
+            opacity: 1;
+            visibility: visible;
         }
 
         #back-top i {
@@ -44,9 +51,9 @@
 
             $(window).scroll(function() {
                 if ($(window).scrollTop() > 300) {
-                    backtop.fadeIn(200);
+                    backtop.addClass("active");
                 } else {
-                    backtop.fadeOut(200);
+                    backtop.removeClass("active");
                 }
             });
 
