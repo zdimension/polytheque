@@ -89,8 +89,24 @@
                 margin-right: 0 !important;
             }
 
+            .card-header {
+                flex-wrap: wrap;
+            }
+
+            .card-header > .card-hf-column:first-of-type {
+                flex-basis: 100%;
+                border-bottom: 1px solid rgba(0,0,0,.125);
+                border-right: 0;
+            }
+
             .card-header > .card-hf-column:last-of-type {
                 border-right: 0;
+            }
+
+            #nav-sidebar {
+                border-left: 0 !important;
+                border-bottom: 1px solid rgba(0,0,0,.125);
+                margin-bottom: 10px;
             }
         }
     </style>
