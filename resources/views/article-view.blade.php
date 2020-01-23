@@ -65,6 +65,20 @@
         #nav-sidebar li.active > a {
             font-weight: bold;
         }
+
+        @media(orientation: portrait) {
+            #article-body-container {
+                flex-direction: column-reverse;
+            }
+
+            #nav-sidebar {
+                position: unset;
+            }
+
+            #article-body {
+                width: unset !important;
+            }
+        }
     </style>
 @endpush
 
@@ -193,7 +207,7 @@
                 @endif
             @endauth
         </div>
-        <div class="card-body markdown row flex-nowrap">
+        <div class="card-body markdown row flex-nowrap" id="article-body-container">
             <div class="col" style="width: 0" id="article-body">
                 {!!markdown($art->contenu)!!}
             </div>
