@@ -79,6 +79,20 @@
                 width: unset !important;
             }
         }
+
+        @media(max-width: 450px) {
+            #btn-edit > span {
+                display: none;
+            }
+
+            #btn-edit > i {
+                margin-right: 0 !important;
+            }
+
+            .card-header > .card-hf-column:last-of-type {
+                border-right: 0;
+            }
+        }
     </style>
 @endpush
 
@@ -197,8 +211,8 @@
             @auth
                 @if (auth()->user()->est(\App\Utilisateur::AUTEUR))
                     <div class="card-hf-column">
-                        <a class="btn btn-primary" href="{{route("article.edit", ["art" => $art])}}"><i
-                                    class="fa fa-pen mr-1" aria-hidden="true"></i> Modifier</a>
+                        <a id="btn-edit" class="btn btn-primary" href="{{route("article.edit", ["art" => $art])}}"><i
+                                    class="fa fa-pen mr-1" aria-hidden="true"></i><span> Modifier</span></a>
                     </div>
                     <!--<div class="card-hf-column">
                         <a class="btn btn-danger" style="transform: scale(0.3)" href="{{route("article.delete", ["art" => $art])}}"><i
