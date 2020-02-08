@@ -36,10 +36,12 @@ class Article extends Model
                 $tot) / (1 + 3.8416 / $tot);
     }
 
-    public static function boot() {
+    public static function boot()
+    {
         parent::boot();
 
-        static::deleting(function($user) {
+        static::deleting(function ($user)
+        {
             $user->votes()->delete();
         });
     }

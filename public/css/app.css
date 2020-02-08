@@ -15,7 +15,7 @@
 
 .card-hf-column {
     padding: 0.75rem;
-    border-right: 1px solid rgba(0,0,0,.125);
+    border-right: 1px solid rgba(0, 0, 0, .125);
     width: fit-content;
     display: flex;
     align-items: center;
@@ -48,7 +48,7 @@
 }
 
 .card-body-row > .card-body-column:not(:last-child) {
-    border-right: 1px solid rgba(0,0,0,.125);
+    border-right: 1px solid rgba(0, 0, 0, .125);
 }
 
 :root {
@@ -61,10 +61,10 @@
     background-color: #f5f5f5;
     height: var(--footer-height);
     width: 100%;
-    border-top: 1px solid rgba(0,0,0,.125);
+    border-top: 1px solid rgba(0, 0, 0, .125);
     z-index: 1000;
     padding-top: 9px;
-    box-shadow: 0 0 .5rem rgba(0,0,0,.25)!important;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .25) !important;
 }
 
 .footer-spacer {

@@ -66,7 +66,7 @@
             font-weight: bold;
         }
 
-        @media(orientation: portrait) {
+        @media (orientation: portrait) {
             #article-body-container {
                 flex-direction: column-reverse;
             }
@@ -80,7 +80,7 @@
             }
         }
 
-        @media(max-width: 450px) {
+        @media (max-width: 450px) {
             #btn-edit > span {
                 display: none;
             }
@@ -95,7 +95,7 @@
 
             .card-header > .card-hf-column:first-of-type {
                 flex-basis: 100%;
-                border-bottom: 1px solid rgba(0,0,0,.125);
+                border-bottom: 1px solid rgba(0, 0, 0, .125);
                 border-right: 0;
             }
 
@@ -105,7 +105,7 @@
 
             #nav-sidebar {
                 border-left: 0 !important;
-                border-bottom: 1px solid rgba(0,0,0,.125);
+                border-bottom: 1px solid rgba(0, 0, 0, .125);
                 margin-bottom: 10px;
             }
         }
@@ -114,21 +114,20 @@
 
 @push("foot")
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             let backtop = $("#back-top");
 
-            $(window).scroll(function() {
+            $(window).scroll(function () {
                 if ($(window).scrollTop() > 300) {
                     backtop.addClass("active");
-                }
-                else {
+                } else {
                     backtop.removeClass("active");
                 }
             });
 
             $(window).scroll();
 
-            backtop.click(function(e) {
+            backtop.click(function (e) {
                 e.preventDefault();
                 $('html, body').animate({scrollTop: 0}, 300);
             });
@@ -137,7 +136,7 @@
 
     @if ($art->sidebar)
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 let c = $("#nav-sidebar");
 
                 let depth = 0;
@@ -145,18 +144,15 @@
                 let cur_list = list;
                 let last = -1;
 
-                $("#article-body :header").each(function(i) {
+                $("#article-body :header").each(function (i) {
                     let num = $(this).prop("tagName")[1];
 
-                    if (last !== -1 && num > last)
-                    {
+                    if (last !== -1 && num > last) {
                         let n_ul = $("<ul></ul>");
                         cur_list.append(n_ul);
                         cur_list = n_ul;
                         depth++;
-                    }
-                    else if (num < last && depth > 0)
-                    {
+                    } else if (num < last && depth > 0) {
                         cur_list = cur_list.parent();
                         depth--;
                     }
@@ -173,7 +169,7 @@
                             .append(
                                 $("<a></a>")
                                     .html($(this).html())
-                                    .click(function() {
+                                    .click(function () {
                                         $("html, body").animate({scrollTop: h.offset().top - 15}, 300);
                                         location.hash = h.attr("id");
                                     })
@@ -182,17 +178,18 @@
 
                 c.append(list);
 
-                list.width(Math.max.apply(Math, list.children().map(function(){ return $(this).width(); }).get()) + 15);
+                list.width(Math.max.apply(Math, list.children().map(function () {
+                    return $(this).width();
+                }).get()) + 15);
 
-                $(window).scroll(function() {
+                $(window).scroll(function () {
                     let found = false;
 
-                    list.find("li").each(function() {
+                    list.find("li").each(function () {
                         if (!found && $(this).data("heading").offset().top - $(window).scrollTop() > 0) {
                             found = true;
                             $(this).addClass("active");
-                        }
-                        else {
+                        } else {
                             $(this).removeClass("active");
                         }
                     });
@@ -240,7 +237,9 @@
             </div>
             @auth
                 <div class="card-hf-column">
-                    Pertinence :&nbsp;<b>{{deci($art->score * 100)}} %</b>&nbsp;({{["très mauvais", "mauvais", "moyen", "bon", "très bon", "excellent"][10 * round($art->score / 2 * 0.99, 1)]}})
+                    Pertinence :&nbsp;<b>{{deci($art->score * 100)}}
+                        %</b>&nbsp;({{["très mauvais", "mauvais", "moyen", "bon", "très bon", "excellent"][10 * round($art->score / 2 * 0.99, 1)]}}
+                    )
                 </div>
 
                 @if (auth()->user()->est(\App\Utilisateur::AUTEUR))
@@ -248,7 +247,7 @@
                         <a id="btn-edit" class="btn btn-primary" href="{{route("article.edit", ["art" => $art])}}"><i
                                     class="fa fa-pen mr-1" aria-hidden="true"></i><span> Modifier</span></a>
                     </div>
-                    <!--<div class="card-hf-column">
+                <!--<div class="card-hf-column">
                         <a class="btn btn-danger" style="transform: scale(0.3)" href="{{route("article.delete", ["art" => $art])}}"><i
                                     class="fa fa-trash mr-1" aria-hidden="true"></i> Supprimer</a>
                     </div>-->

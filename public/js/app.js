@@ -21,7 +21,7 @@ $(document).ready(function () {
         })
     });
 
-    $('.rating-star').each(function() {
+    $('.rating-star').each(function () {
         $(this).rating({
             hoverOnClear: false,
             theme: 'krajee-fas',

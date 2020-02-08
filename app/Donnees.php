@@ -23,7 +23,10 @@ class Donnees
 
     private static function getNom()
     {
-        return function($x) { return $x["nom"]; };
+        return function ($x)
+        {
+            return $x["nom"];
+        };
     }
 
     private static function getNoms(array $a)
@@ -31,7 +34,7 @@ class Donnees
         return array_map(self::getNom(), $a);
     }
 
-    public static function getNiveaux(string $n=null)
+    public static function getNiveaux(string $n = null)
     {
         return self::getNoms(self::getAnnee($n)->xpath("niveau"));
     }

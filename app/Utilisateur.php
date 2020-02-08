@@ -50,7 +50,7 @@ class Utilisateur extends Authenticatable implements MustVerifyEmail
         'colorations' => 'array'
     ];
 
-    protected $maps =[
+    protected $maps = [
         'email_verified_at' => 'date_verification'
     ];
 

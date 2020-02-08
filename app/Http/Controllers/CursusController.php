@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 
-
 use App\Cursus;
 use App\Donnees;
 use App\Http\Controllers\Auth\RegisterController;
@@ -13,8 +12,8 @@ class CursusController extends Controller
 {
     public function index()
     {
-        return view ("cursus-list", [
-            'cursus'=> auth()->user()->cursus->sortBy("semestre")->groupBy("annee")
+        return view("cursus-list", [
+            'cursus' => auth()->user()->cursus->sortBy("semestre")->groupBy("annee")
         ]);
     }
 

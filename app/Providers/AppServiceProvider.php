@@ -14,23 +14,28 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \Blade::if('respo_vente', function () {
+        \Blade::if('respo_vente', function ()
+        {
             return auth()->check() && auth()->user()->est(Utilisateur::RESPO_VENTE);
         });
 
-        \Blade::if('respo_comm', function () {
+        \Blade::if('respo_comm', function ()
+        {
             return auth()->check() && auth()->user()->est(Utilisateur::RESPO_COMM);
         });
 
-        \Blade::if('respo_adh', function () {
+        \Blade::if('respo_adh', function ()
+        {
             return auth()->check() && auth()->user()->est(Utilisateur::RESPO_ADH);
         });
 
-        \Blade::if('adherent', function () {
+        \Blade::if('adherent', function ()
+        {
             return auth()->check() && auth()->user()->est(Utilisateur::ADHERENT);
         });
 
-        \Blade::if('admin', function () {
+        \Blade::if('admin', function ()
+        {
             return auth()->check() && auth()->user()->est(Utilisateur::ADMIN);
         });
 

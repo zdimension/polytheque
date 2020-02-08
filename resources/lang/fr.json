@@ -1,8 +1,7 @@
 {
   "All rights reserved.": "Tous droits réservés.",
   "Hello!": "Bonjour !",
-  "You are receiving this email because we received a password reset request for your account.":
-          "Vous recevez cet e-mail car une demande de réinitialisation de mot de passe a été effectuée pour votre compte.",
+  "You are receiving this email because we received a password reset request for your account.": "Vous recevez cet e-mail car une demande de réinitialisation de mot de passe a été effectuée pour votre compte.",
   "Reset Password": "Réinitialiser votre mot de passe",
   "Reset Password Notification": "Réinitialisation de mot de passe",
   "This password reset link will expire in 60 minutes.": "Ce lien expirera dans 60 minutes.",

@@ -25,7 +25,8 @@
 @section('content')
     <h2 class="mb-3">Accueil</h2>
 
-    <h6>Tutos et trucs utiles en tout genre. Lisez bien les <a href="{{route("alias", ["alias" => "legal"])}}">CGU</a></h6>
+    <h6>Tutos et trucs utiles en tout genre. Lisez bien les <a href="{{route("alias", ["alias" => "legal"])}}">CGU</a>
+    </h6>
 
     <hr>
     <h4 class="mb-3">Derniers articles</h4>

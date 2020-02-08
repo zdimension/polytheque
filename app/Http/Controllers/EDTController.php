@@ -44,7 +44,7 @@ class EDTController extends Controller
         }
     }
 
-    public function getTrainees(string $query=null)
+    public function getTrainees(string $query = null)
     {
         $res = (array)$this->requete("getResources", ["detail" => 4, "category" => "trainee"]);
 
@@ -52,14 +52,17 @@ class EDTController extends Controller
         {
             $query = lighten($query);
 
-            $res = array_filter($res["trainee"], function ($x) use($query) {
+            $res = array_filter($res["trainee"], function ($x) use ($query)
+            {
                 return $x["isGroup"] == "false" && Str::contains(lighten($x["name"]), $query);
             });
         }
 
-        return collect(array_map(function($x) {
+        return collect(array_map(function ($x)
+        {
             return current($x->attributes());
-        }, $res))->sortBy(function($x) {
+        }, $res))->sortBy(function ($x)
+        {
             return $x["path"] . $x["name"];
         })->values();
     }
@@ -82,7 +85,8 @@ class EDTController extends Controller
 
         try
         {
-            $res = $this->requete("connect", ["login" => config("services.ade.username"), "password" => config("services.ade.password")]);
+            $res = $this->requete("connect",
+                ["login" => config("services.ade.username"), "password" => config("services.ade.password")]);
 
             if ($res !== null)
             {
@@ -105,13 +109,14 @@ class EDTController extends Controller
         $this->sessid = null;
     }
 
-    private function requete($func, $args=[])
+    private function requete($func, $args = [])
     {
         if ($this->sessid === null && $func != "connect")
         {
             if (!$this->connect())
             {
-                var_dump("Erreur de connexion"); die();
+                var_dump("Erreur de connexion");
+                die();
                 return null;
             }
         }

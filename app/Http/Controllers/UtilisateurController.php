@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 
-
 use App\Http\Controllers\Auth\RegisterController;
 use App\Utilisateur;
 
@@ -21,8 +20,10 @@ class UtilisateurController extends Controller
             'password' => 'nullable|string|min:8|confirmed',
             'password_old' => [
                 'required',
-                function ($_, $val, $fail) {
-                    if (!password_verify($val, auth()->user()->mdp)) {
+                function ($_, $val, $fail)
+                {
+                    if (!password_verify($val, auth()->user()->mdp))
+                    {
                         $fail("L'ancien mot de passe est incorrect.");
                     }
                 }

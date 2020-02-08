@@ -10,7 +10,7 @@ function exec_cmd($cmd)
     return implode("\n", $out);
 }
 
-function deci($x, $n=2)
+function deci($x, $n = 2)
 {
     return number_format($x, $n, ",", ".");
 }
@@ -28,7 +28,7 @@ function currentYear()
         return date('Y') - 1;
 }
 
-function currentYearDisp($yr=null)
+function currentYearDisp($yr = null)
 {
     $yr = (int)($yr ?: currentYear());
     return $yr . "-" . ($yr + 1);
