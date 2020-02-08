@@ -224,7 +224,25 @@
             <div class="card-hf-column">
                 le {{$art->date_creation->format("d/m/Y")}}
             </div>
+            <div class="card-hf-column">
+                <form action="{{route("article.vote", ["art" => $art])}}"
+                      method="post">
+                    {{ csrf_field() }}
+                    <button type="submit" name="vote" value="1" class="btn btn-success">
+                        <i class="fa fa-thumbs-up"
+                           aria-hidden="true"></i>&nbsp;{{$art->votes->where("positif", 1)->count()}}
+                    </button>
+                    <button type="submit" name="vote" value="0" class="btn btn-danger">
+                        <i class="fa fa-thumbs-down"
+                           aria-hidden="true"></i>&nbsp;{{$art->votes->where("positif", 0)->count()}}
+                    </button>
+                </form>
+            </div>
             @auth
+                <div class="card-hf-column">
+                    Pertinence :&nbsp;<b>{{deci($art->score * 100)}} %</b>&nbsp;({{["très mauvais", "mauvais", "moyen", "bon", "très bon", "excellent"][10 * round($art->score / 2 * 0.99, 1)]}})
+                </div>
+
                 @if (auth()->user()->est(\App\Utilisateur::AUTEUR))
                     <div class="card-hf-column">
                         <a id="btn-edit" class="btn btn-primary" href="{{route("article.edit", ["art" => $art])}}"><i

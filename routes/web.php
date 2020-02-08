@@ -20,6 +20,8 @@ Route::get('/', "HomeController@index")->name("root");
 Route::prefix("/article")->name("article.")->group(function()
 {
     Route::get("/{art}", "ArticleController@voir")->where("art", "[0-9]+")->name("view");
+
+    Route::post("/{art}/vote", "ArticleController@vote")->name("vote");
 });
 
 Route::prefix("/fichier")->name("fichier.")->group(function ()
