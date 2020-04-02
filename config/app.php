@@ -228,4 +228,5 @@ return [
 
     ],
 
+    'force_ssl' => env('APP_FORCE_SSL', false),
 ];
